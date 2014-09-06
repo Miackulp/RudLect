@@ -1,0 +1,57 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage[dvips]{graphicx}
+\usepackage[left = 2cm, top = 1cm, right = 2cm, bottom = 2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{eufrak}
+
+\newtheorem*{definition}{Определение}
+
+\lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
+\lstset{extendedchars=false,
+        breaklines=true, %автоперенос длинных линий
+        breakatwhitespace=true}
+\graphicspath{{pic/}}
+\titleformat{\chapter}[block]{\color{black}\Large\bfseries\filcenter}{}{1em}{}
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+\title{Основания алгебраического подхода к синтезу корректных алгоритмов}
+\author{Читал - Рудаков К.В.\\ Набивал - Старожилец В.М.}
+\date{}
+\maketitle
+
+\tableofcontents
+
+\chapter{Лекция 1}
+\section{Введение}
+Данные лекции предназначены для общего рассмотрения задач машинного обучения не привязываясь каким-либо конкретным методам. Они являются чем-то сродни взгляда сверху.
+
+В первую очередь следует сформулировать задачу машинного обучения в общем виде. По сути это задача построения такого алгоритма который реализует отображение из множества начальных информаций в множество конечных.
+
+\begin{definition} Символом $\mathfrak{I_i}$ будем обозначать множество начальных информаций. Например, симптомы болезни. \end{definition}
+\begin{definition} Символом $\mathfrak{I_f}$ будем обозначать множество конечных информаций. Например, диагноз. \end{definition}
+
+Таким образом, на формальном языке нам требуется найти такой алгоритм $A$, что он осуществляет отображение $\mathfrak{I_i}\xrightarrow{A}\mathfrak{I_f}$. Пока что задача стоит так, что нам нужно просто найти отображение из одного множества в другое причём абсолютно неважно какое. В такой постановке у нас нет каких либо ограничений и даже просто случайный выбор решает эту задачу. Поэтому вводятся дополнительные ограничения на допустимые алгоритмы. Итак,
+
+\begin{definition} $\mathfrak{M}^* = \{A|\ A:\  \mathfrak{I_i}\xrightarrow{A}\mathfrak{I_f}\}$ множество всех алгоритмов осуществляющих отображение из $\mathfrak{I_i}$ в $\mathfrak{I_f}$. \end{definition}
+\begin{definition} $I_{str}$ --- структурная информация. Условия/требования по отношению к $A$. \end{definition}
+\begin{definition} $\mathfrak{M}(I_{str})$ - некоторое подмножество $\mathfrak{M}^*$ удовлетворяющее $I_{str}$. \end{definition}
+
+Теперь у нас есть некоторый механизм($I_{str}$) позволяющий вводит дополнительные ограничения к нашей задаче.
+\begin{definition}[Допустимое отображение]Любое отображение из множества $\mathfrak{M}(I_{str})$ является допустимым. \end{definition}
+\begin{definition}[Задача Z] Построение алгоритма реализующего допустимое отображение. \end{definition}
+\begin{definition}[Корректный алгоритм] Любой алгоритм реализующий любое допустимое отображение называется корректным. \end{definition}
+
+В такой формулировке очевидно, что необходимое и достаточное условие разрешимости задачи это $\mathfrak{M}(I_{str})\neq\emptyset$, а единственности решения: $|\mathfrak{M}(I_{str})|=1$. 
+Заметим также, что в данной формулировке корректный алгоритм - алгоритм не допускающий ни одной ошибки ($\mathfrak{M}(I_{str})$ - множество алгоритмов не допускающих ошибок)! Однако, можно поставить условия и несколько мягче, и дать возможность алгоритмам ошибаться.
+
+\section{Поиск решения задачи}
+\end{document}
