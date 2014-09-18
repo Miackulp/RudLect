@@ -6,3 +6,7 @@
 *.toc
 *.pdf
 *.synctex
+*.out
+*.pdf
+*.bak
+*.sav
