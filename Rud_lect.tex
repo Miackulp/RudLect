@@ -14,6 +14,8 @@
 
 \usepackage{color}
 
+\usepackage{shortcuts}
+
 \newtheorem*{definition}{Определение}
 
 \lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
@@ -23,6 +25,7 @@
 \graphicspath{{pic/}}
 \titleformat{\chapter}[block]{\color{black}\Large\bfseries\filcenter}{}{1em}{}
 \setcounter{secnumdepth}{0}
+
 
 \begin{document}
 \title{Основания алгебраического подхода к синтезу корректных алгоритмов}
@@ -263,19 +266,19 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
 Класс - это объект который не может быть элементом множества или другого класса, в остальном свойства класса и множества совпадают.
 \end{definition}
 \begin{definition}
-Будем обозначать $\mathfrak{C}_{ql}(\mathfrak{U})$ - пространство всех матриц над произвольным неодноэлементным множеством $\mathfrak{U}$. Заметим, что если $\mathfrak{U}$ произвольные множества, то $\mathfrak{C}_{ql}(\mathfrak{U})$ это класс.
+Будем обозначать $\Cql(\mathfrak{U})$ - пространство всех матриц над произвольным неодноэлементным множеством $\mathfrak{U}$. Заметим, что если $\mathfrak{U}$ произвольные множества, то $\Cql(\mathfrak{U})$ это класс.
 \end{definition}
 
 \begin{definition}[Категория]
 Это очень важное определение. Будем обозначать $\Psi$ категорию. Тогда,
 \begin{itemize}
   \item $Ob\Psi$ - класс
-  \item $\forall (A, B) \in Ob\Psi \rightarrow Homm_{\Psi} (A, B)$ - множество. \\То есть любой паре элементов из $Ob\Psi$ ставится в соответствие множество отображений из $A$ в $B$. 
+  \item $\forall (A, B) \in Ob\Psi \rightarrow Homm_{\Psi} (A, B)$ - множество. \\То есть любой паре элементов из $Ob\Psi$ ставится в соответствие множество отображений из $A$ в $B$.
 \end{itemize}
 Таким образом категория это множество объектов и операций над ними.
 \end{definition}
 
-Рассмотрим свойства категории $\Psi$. 
+Рассмотрим свойства категории $\Psi$.
 \begin{enumerate}
   \item Пусть есть 3 элемента $A, B, C \in \Psi$, причём
       \begin{figure}[htbp]
@@ -283,7 +286,7 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
             \includegraphics[width=0.3\linewidth]{lect5/Properity1pic1.png}
         \end{center}
       \end{figure}
-      Тогда $w = v \circ u$. Таким образом определены суперпозиции для морфизмов. Более того, $(u \circ v) \circ w = u \circ (v \circ w)$ для любых $u, v, w$ для которых такая суперпозиция имеет смысл. А также существует единственный элемент $e_A$, такой, что      
+      Тогда $w = v \circ u$. Таким образом определены суперпозиции для морфизмов. Более того, $(u \circ v) \circ w = u \circ (v \circ w)$ для любых $u, v, w$ для которых такая суперпозиция имеет смысл. А также существует единственный элемент $e_A$, такой, что
       \begin{figure}[htbp]
         \begin{center}
              \begin{minipage}[h]{0,45\linewidth}
@@ -318,12 +321,12 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
   \item $\mathfrak{J}_i = \mathfrak{J}_{ob}\times\mathfrak{J}_{cl}$. В такой постановке мы игнорируем тот факт, что классов у нас l. Неявно предполагаем, что классы однородны.
   \item $\mathfrak{J}_i = \mathfrak{J}_{ob}\times\mathfrak{J}_{cl}^l$. Этот вариант лишен проблемы первого пункта и классы наши различны.
   \item $\mathfrak{J}_i = \mathfrak{J}_{ob}^q\times\mathfrak{J}_{cl}^l$. Ещё более сложный вариант в котором участвует количество объектов - $q$. Таким образом $S_1,\ldots,S_q$ - объекты, $(S_1,\ldots,S_q)\in\Upsilon^q$ и окончательно $\mathfrak{D}(S_1),\ldots,\mathfrak{D}(S_q) \in \mathfrak{J}_{ob}^q$.
-  \item $\mathfrak{J}_i = \mathfrak{C}_{ql}(\mathfrak{J}),\ \mathfrak{J}_f = \mathfrak{C}_{ql}(\tilde{\mathfrak{J}})$, где $\mathfrak{C}_{ql}$ - пространство $q\times l$ матриц над чем либо. Данный вариант наиболее общий и его мы и будем в дальнейшем рассматривать считая $\mathfrak{J},\ \tilde{\mathfrak{J}}$ неодноэлементными множествами (иначе множество матриц тривиально). Может показаться, что пункт 4 и 3 дают одинаковую задачу, но это не так. \textcolor{red}{Саня, Я не помню контрпример. Если у тебя есть - впиши}
+  \item $\mathfrak{J}_i = \Cql(\mathfrak{J}),\ \mathfrak{J}_f = \Cql(\tilde{\mathfrak{J}})$, где $\Cql$ - пространство $q\times l$ матриц над чем либо. Данный вариант наиболее общий и его мы и будем в дальнейшем рассматривать считая $\mathfrak{J},\ \tilde{\mathfrak{J}}$ неодноэлементными множествами (иначе множество матриц тривиально). Может показаться, что пункт 4 и 3 дают одинаковую задачу, но это не так. \textcolor{red}{Саня, Я не помню контрпример. Если у тебя есть - впиши}
 \end{enumerate}
-В новых терминах решение задача Z формулируется таким образом: Пусть $\hat(I) \in \mathfrak{C}_{ql}(\mathfrak{J})$ и $\hat(\tilde{I}) \in \mathfrak{C}_{ql}(\tilde{\mathfrak{J}})$. Мы ищем такие отображения $A$, что они являются допустимыми и $A(\hat(I)) = \hat(\tilde{I})$
+В новых терминах решение задача Z формулируется таким образом: Пусть $\hat{I} \in \Cql(\mathfrak{J})$ и $\hat{\tilde{I}} \in \Cql(\tilde{\mathfrak{J}})$. Мы ищем такие отображения $A$, что они являются допустимыми и $A(\hat{I}) = \hat{\tilde{I}}$
 
 \begin{definition}
-Алгоритм называется корректным на прецедентах, если $A(\hat(I)) = \hat(\tilde{I})$
+Алгоритм называется корректным на прецедентах, если $A(\hat{I}) = \hat{\tilde{I}}$
 \end{definition}
 \textcolor{red}{Саня, я тут не особо хорошо записывал. Проверь. Как то странновато вышло.}
 
