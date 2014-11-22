@@ -8,15 +8,16 @@
 % \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{listings}
-\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{eufrak}
+\usepackage{amsthm}
 
 \usepackage{color}
 
 \usepackage{shortcuts}
 
 \newtheorem{definition}{Определение}[chapter]
+\newtheorem*{theorem}{Теорема}
 
 \lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
 \lstset{extendedchars=false,
@@ -359,4 +360,50 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 
 \chapter{Лекция 6}
 \section{Переход к категориям}
+Для начала введем несколько упрощающих запись обозначений:
+\begin{itemize}
+  \item $Hom_{\Psi}(\Cql(\mfU),\ \Cql(\mfW)) = H(\mfU,\ \mfW)$ 
+  \item $\bigcup_{p=0}^{\infty}Hom_{\Psi}(\Cql^p(\mfU),\ \Cql(\mfW)) = \mcH(\mfU,\ \mfW)$
+\end{itemize}
+\textcolor{red}{Саня, Я не нашёл нужную букву под фигурное W. Пока что там стоит mathfrak{W}}
+\begin{definition}
+\textcolor{red}{Саня, тут должно быть определение полной категории, но я его пропил. Да и вообще, кажется, я спал на этой лекции... надо бы дополнить её.}
+\end{definition}
+
+Определим также понятие регулярной задачи. Пусть у нас есть множество $\mathfrak{Z}=\{Z\}$ - множество задач Z. Регулярность можно определять несколькими способами, например:
+\begin{definition}[Регулярность по Журавлеву]
+Задача регулярна, если разрешима для любой $\edI$.
+\end{definition}
+\begin{definition}
+Задача называется регулярной, если существует окрестность $O(Z)\subseteq \mathfrak{Z},\ Z\in O(Z)$ такая, $\forall Z_i\in O(Z) \rightarrow Z_i$ - разрешима.
+\end{definition}
+Мы будем пользоваться вторым определением.
+Таким образом каждой задаче $Z$ задан в соответствие набор $((\stI,\ \edI), I_{str}^u)$, $O(Z) = \{Z'| Z' \leftrightarrow ((\stI,\ \edI'), I_{str}^u)\}$. 
+И окончательно $I_{str} \leftrightarrow \Psi$.
+\textcolor{red}{Саня, итак, получилось уберкоротко и нихрена не понятно (частично понятно, но последняя строчка вообще хрен знает откуда вылезла) Плюс я картинку не рисовал (квадрат со стрелочками). Надо с обозначениями для них разобраться.}
+
+\chapter{Лекция 7}
+\section{Понятие базы и формализация требований к морфизмам}
+Нам потребуется понятие базы для последующих исследований. Введем его схожим с линейными пространствами способом:
+\begin{definition}
+Множество $X\subseteq \Cql(\mfU)$ называется базой в $\Psi$, если $\mcH(\mfU,\mfU)(X)\ =\ \{\hmfU| \hmfU \in \Cql(\mfU),\ \exists p\ \exists U\ \exists_{X^p} (\hmfu^1,\ldots,\hmfu^p): \hmfU = u(\hmfu^1,\ldots,\hmfu^p)\}$. \\
+Данная развернутая запись является обобщением простой идеи:  $\mcH(\mfU,\mfU)(X) = \Cql(\mfU)$. \\
+Или ещё проще - из множества $X$ с помощью всех морфизмов из $\Psi $можно получить любую матрицу из $\Cql(\mfU)$.
+\end{definition}
+Однако, этого определения нам недостаточно, так как в нашей задаче мы смотрим морфизмы из одного множества в другое. Поэтому нам нужно множество $X$ в первом множестве, являющееся базой во втором. Это приводит нас к следующему определению.
+\begin{definition}
+Множество $X\subseteq \Cql(\mfU)$ называется базой в $\Cql(\mfU)$ для $\Cql(\mfW)$, если $\mcH(\mfU,\mfW)(X) = \Cql(\mfW)$.
+\end{definition}
+Также, для предстоящей нам теоремы нам потребуется понятие полной категории.
+\begin{definition}
+$\Psi$~--- полная категория, если при всех $\mfU$ и  $\mfW$: $\mcH(\mfU,\mfW)(\Cql(\mfU)) = \Cql(\mfW)$.\\
+Иначе, если $\Cql(\mfU)$ база в $\Cql(\mfU)$ для $\Cql(\mfW)$.
+\end{definition}
+
+Всё это приводит нас к следующей теореме.
+\begin{theorem}
+Пусть $\Psi$ - полная допустимая категория, $\mfU,\ \mfW$ - множества. Тогда $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\mfU)$ для $\Cql(\mfW))$.
+\end{theorem}
+\begin{proof}
+\end{proof}
 \end{document} 
