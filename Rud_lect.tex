@@ -18,6 +18,7 @@
 
 \newtheorem*{definition}{Определение}
 \newtheorem*{theorem}{Теорема}
+\newtheorem{St}{Утверждение}[chapter]
 
 \lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
 \lstset{extendedchars=false,
@@ -335,8 +336,8 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
 \section{Переход к категориям}
 Для начала введем несколько упрощающих запись обозначений:
 \begin{itemize}
-  \item $Hom_{\Psi}(\Cql(\mfU),\ \Cql(\mfW)) = H(\mfU,\ \mfW)$ 
-  \item $\bigcup_{p=0}^{\infty}Hom_{\Psi}(\Cql^p(\mfU),\ \Cql(\mfW)) = \mcH(\mfU,\ \mfW)$
+  \item $Hom_{\Psi}(\Cql(\frakU),\ \Cql(\frakW)) = H(\frakU,\ \frakW)$ 
+  \item $\bigcup_{p=0}^{\infty}Hom_{\Psi}(\Cql^p(\frakU),\ \Cql(\frakW)) = \calH(\frakU,\ \frakW)$
 \end{itemize}
 \textcolor{red}{Саня, Я не нашёл нужную букву под фигурное W. Пока что там стоит mathfrak{W}}
 \begin{definition}
@@ -345,13 +346,13 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
 
 Определим также понятие регулярной задачи. Пусть у нас есть множество $\mathfrak{Z}=\{Z\}$ - множество задач Z. Регулярность можно определять несколькими способами, например:
 \begin{definition}[Регулярность по Журавлеву]
-Задача регулярна, если разрешима для любой $\edI$.
+Задача регулярна, если разрешима для любой $\htI$.
 \end{definition}
 \begin{definition}
 Задача называется регулярной, если существует окрестность $O(Z)\subseteq \mathfrak{Z},\ Z\in O(Z)$ такая, $\forall Z_i\in O(Z) \rightarrow Z_i$ - разрешима.
 \end{definition}
 Мы будем пользоваться вторым определением.
-Таким образом каждой задаче $Z$ задан в соответствие набор $((\stI,\ \edI), I_{str}^u)$, $O(Z) = \{Z'| Z' \leftrightarrow ((\stI,\ \edI'), I_{str}^u)\}$. 
+Таким образом каждой задаче $Z$ задан в соответствие набор $((\hI,\ \htI), I_{str}^u)$, $O(Z) = \{Z'| Z' \leftrightarrow ((\hI,\ \htI'), I_{str}^u)\}$. 
 И окончательно $I_{str} \leftrightarrow \Psi$.
 \textcolor{red}{Саня, итак, получилось уберкоротко и нихрена не понятно (частично понятно, но последняя строчка вообще хрен знает откуда вылезла) Плюс я картинку не рисовал (квадрат со стрелочками). Надо с обозначениями для них разобраться.}
 
@@ -359,24 +360,53 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
 \section{Понятие базы и формализация требований к морфизмам}
 Нам потребуется понятие базы для последующих исследований. Введем его схожим с линейными пространствами способом:
 \begin{definition}
-Множество $X\subseteq \Cql(\mfU)$ называется базой в $\Psi$, если $\mcH(\mfU,\mfU)(X)\ =\ \{\hmfU| \hmfU \in \Cql(\mfU),\ \exists p\ \exists U\ \exists_{X^p} (\hmfu^1,\ldots,\hmfu^p): \hmfU = u(\hmfu^1,\ldots,\hmfu^p)\}$. \\
-Данная развернутая запись является обобщением простой идеи:  $\mcH(\mfU,\mfU)(X) = \Cql(\mfU)$. \\
-Или ещё проще - из множества $X$ с помощью всех морфизмов из $\Psi $можно получить любую матрицу из $\Cql(\mfU)$.
+Множество $X\subseteq \Cql(\frakU)$ называется базой в $\Psi$, если $\calH(\frakU,\frakU)(X)\ =\ \{\hfrakU| \hfrakU \in \Cql(\frakU),\ \exists p\ \exists U\ \exists_{X^p} (\hfrakU^1,\ldots,\hfrakU^p): \hfrakU = u(\hfrakU^1,\ldots,\hfrakU^p)\}$. \\
+Данная развернутая запись является обобщением простой идеи:  $\calH(\frakU,\frakU)(X) = \Cql(\frakU)$. \\
+Или ещё проще - из множества $X$ с помощью всех морфизмов из $\Psi $можно получить любую матрицу из $\Cql(\frakU)$.
 \end{definition}
 Однако, этого определения нам недостаточно, так как в нашей задаче мы смотрим морфизмы из одного множества в другое. Поэтому нам нужно множество $X$ в первом множестве, являющееся базой во втором. Это приводит нас к следующему определению.
 \begin{definition}
-Множество $X\subseteq \Cql(\mfU)$ называется базой в $\Cql(\mfU)$ для $\Cql(\mfW)$, если $\mcH(\mfU,\mfW)(X) = \Cql(\mfW)$.
+Множество $X\subseteq \Cql(\frakU)$ называется базой в $\Cql(\frakU)$ для $\Cql(\frakW)$, если $\calH(\frakU,\frakW)(X) = \Cql(\frakW)$.
 \end{definition}
 Также, для предстоящей нам теоремы нам потребуется понятие полной категории.
 \begin{definition}
-$\Psi$~--- полная категория, если при всех $\mfU$ и  $\mfW$: $\mcH(\mfU,\mfW)(\Cql(\mfU)) = \Cql(\mfW)$.\\
-Иначе, если $\Cql(\mfU)$ база в $\Cql(\mfU)$ для $\Cql(\mfW)$.
+$\Psi$~--- полная категория, если при всех $\frakU$ и  $\frakW$: $\calH(\frakU,\frakW)(\Cql(\frakU)) = \Cql(\frakW)$.\\
+Иначе, если $\Cql(\frakU)$ база в $\Cql(\frakU)$ для $\Cql(\frakW)$.
 \end{definition}
 
 Всё это приводит нас к следующей теореме.
 \begin{theorem}
-Пусть $\Psi$ - полная допустимая категория, $\mfU,\ \mfW$ - множества. Тогда $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\mfU)$ для $\Cql(\mfW))$.
+Пусть $\Psi$ - полная допустимая категория, $\frakU,\ \frakW$ - множества. Тогда $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$.
 \end{theorem}
 \begin{proof}
+\end{proof}
+
+\chapter{Лекция ...}
+\begin{St}
+Пусть $\sigma \subseteq \sigma_0$, $\Sigma$ категория, соответствующая $\sigma$, $\frakU$~--- некоторое множество и $X \subseteq \Cql(\frakU)$. Тогда 
+\[
+X\text{~--- база категории} \; \Sigma \Leftrightarrow \forall s \in \sigma \setminus \{e\} \ \exists \hat{u} \in X: s(\hat{u}) \neq \hat{u}.
+\] 
+\end{St}
+\begin{proof}
+Идея доказательства: если есть нетождественная подстановка переводящая все матрицы в себя, то нельзя получить всё пространство.
+
+\textbf{Необходимость.} Пусть $\exists s \in \sigma \setminus \{e\}: \forall \hat{u} \in X$ выполнено $s(\hat{u}) = \hat{u}$. Рассмотрим такую матрицу $\hat{v} \in \Cql(\frakV)$, что $s(\hat{v}) \neq \hat{v}$. Матрица $\hat{v}$ найдётся, так как $s$ нетождественна, следовательно существуют элементы, которые перемещаются по орбите, длина которой больше 1; составим $\hat{v}$ из различных элементов множества $\frakV$, стоящих на позициях, соответствующих этой орбите.
+
+Пусть $u$~--- морфизм $\Sigma$: $\exists \hat{u}^1, \ldots \hat{u}^p \in X^p$ такие что 
+\[
+u(\hat{u}^1, \ldots, \hat{u}^p) = \hat{v}.
+\]
+Подействуем на последнее равенство перестановкой $s$:
+\begin{equation*}
+\begin{split}
+& s \circ u(\hat{u}^1, \ldots, \hat{u}^p) = s(\hat{v}) \neq \hat{v}\\
+& u \circ s(\hat{u}^1, \ldots, \hat{u}^p) = u(s(\hat{u}^1), \ldots, s(\hat{u}^p)) = u(\hat{u}^1, \ldots, \hat{u}^p) = \hat{v}
+\end{split}
+\end{equation*}
+Получили противоречие с принадлежностью $u$ к морфизмам категории $\Sigma$.      
+
+\textbf{Достаточность.}
+
 \end{proof}
 \end{document} 
