@@ -368,7 +368,10 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 \end{itemize}
 \textcolor{red}{Саня, Я не нашёл нужную букву под фигурное W. Пока что там стоит mathfrak{W}}
 \begin{definition}
-\textcolor{red}{Саня, тут должно быть определение полной категории, но я его пропил. Да и вообще, кажется, я спал на этой лекции... надо бы дополнить её.}
+Категория $\Psi$ называется полной категорией, если при любых неодноэлементных $\frakU$ и $\frakV$ выполнено
+\[
+\calH(\frakU, \frakV)(\Cql(\frakU)) = \Cql(\frakV).
+\]
 \end{definition}
 
 Определим также понятие регулярной задачи. Пусть у нас есть множество $\mathfrak{Z}=\{Z\}$ - множество задач Z. Регулярность можно определять несколькими способами, например:
@@ -408,7 +411,78 @@ $\Psi$~--- полная категория, если при всех $\frakU$ и
 \begin{proof}
 \end{proof}
 
-\chapter{Лекция ...}
+\chapter{Лекция 8}
+
+\begin{definition}
+Операция $\frakm'$ корректна, если $\frakm'(\Cql(\calR)) = \Cql(\tilde{\frakI})$.
+\end{definition}
+
+\begin{definition}
+Справедливы следующие отношения:
+\[
+f\text{-полно} \Leftrightarrow f\text{-}\Gamma\text{-полно} \Leftrightarrow X\text{-база} \Rightarrow f(X) = \Cql(\calR).
+\]
+\end{definition}
+
+Отображение $\frakm$ представимо в следующем виде:
+\[
+\frakm = \frakm' \circ f \circ \frakm^0.
+\]
+
+Рассмотрим множество $S = \{ (1, 1), \ldots, (q,l) \}$ и симметрическую группу подстановок $\sigma_0$, действующую на множестве $S$. Обозначим $s \in \sigma_0$ отображение $s: \Cql^p(\frakU) \rightarrow \Cql^p(\frakU)$.
+
+\begin{definition}
+$s(\hat{u}) = s(\| \hat{u}_{ij} \|_{q\times l}) = \|\hat{u}_{s(i, j)} \|_{ql}$
+\end{definition}
+
+\begin{definition}
+$s(\hat{u}^1, \ldots, \hat{u}^p) = (s(\hat{u}^1), \ldots, s(\hat{u}^p))$
+\end{definition}
+ 
+\begin{definition}
+Пусть $u: \Cql(\frakU) \rightarrow \Cql(\frakW)$ и $s \in \sigma_0$. Тогда $u$ коммутирует с $s$, если $u \circ s = s \circ u$.
+\end{definition}
+
+\begin{definition}
+Категория $\Delta$~--- подкатегория $\Psi_{ql}$, такая что при всех множествах $\frakU$ и $\frakW$, арностях $p_1$ и $p_2$ множество морфизмов 
+\[
+Hom_{\Delta}(\Cql^{p_1}(\frakU), \Cql^{p_2}(\frakW)) = \{ u: \Cql() \rightarrow \Cql(), \; \forall s \in \delta \subseteq \sigma_0: \; u \circ s = s \circ u \}.
+\] 
+\end{definition}
+
+Проверка требований к категории:
+\begin{enumerate}
+\item Тождественное отображение коммутирует с любым отображением.
+\item Коммутация суперпозиций: $(u \circ v) \circ s = u \circ (v \circ s) = u \circ (s \circ v) = s \circ (u \circ v)$.
+\end{enumerate}
+Допустимость категории следует из определения. 
+
+\begin{St}
+$\forall us_1 = s_1u$ {\rm и} $us_2 = s_2u \Rightarrow u(s_1s_2) = (s_1s_2)u$ 
+\end{St}
+
+Если $\delta \subseteq \sigma_0$ и $\sigma_{\delta}$~--- подгруппа, для которой $\delta$ образующая, тогда $\Delta = \Delta_{\delta}$.
+
+Если $\delta_1 \subseteq \delta_2 \Rightarrow \Delta_2$~--- подкатегория $\Delta_1$: добавление ограничений на $u$ из определения~$\Delta$. Следовательно, $\sigma_0$ соответствует минимальной категории, так как накладывается наибольшее количество ограничений.
+
+Примеры морфизмов категории $\Sigma_0$:
+\begin{enumerate}
+\item Сложение действительных матриц.
+\item Поэлементное умножение матриц.
+\item Нормировка матрицы. В отличии от двух предыдущих примеров зависит целиком от всей матрицы, а не от пары элементов. 
+\end{enumerate} 
+\chapter{Лекция 9}
+\begin{St}
+Категория $\Sigma_0$ полна.
+\end{St}
+\begin{proof}
+Нужно доказать, что $\forall \frakU, \frakV$: $\calH(\frakU, \frakV)(\Cql(\frakU)) = \Cql(\frakV)$. 
+\end{proof}
+
+Матрица с попарно различными элементами~--- одноэлементная база.
+
+
+\chapter{Лекция 10}
 \begin{St}
 Пусть $\sigma \subseteq \sigma_0$, $\Sigma$ категория, соответствующая $\sigma$, $\frakU$~--- некоторое множество и $X \subseteq \Cql(\frakU)$. Тогда 
 \[
