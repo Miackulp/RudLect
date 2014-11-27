@@ -507,7 +507,29 @@ u(\hat{u}^1, \ldots, \hat{u}^p) = \hat{v}.
 \end{equation*}
 Получили противоречие с принадлежностью $u$ к морфизмам категории $\Sigma$.      
 
-\textbf{Достаточность.}
+\textbf{Достаточность.} Пусть $\sigma \setminus \{e\} = (s_1, \ldots, s_p)$~--- подстановки из группы $\sigma$. Пусть вектор матриц $\bar{\hat{u}}^0 = (\hat{u}^1, \ldots, \hat{u}^p)$ такой, что выполнено условие
+\[
+s_k(\hat{u}^k) \neq \hat{u}^k. \eqno(*) 
+\]
+Отсюда выполнено $\forall k s_k(\bar{\hat{u}}) \neq \bar{\hat{u}}$: если есть несовпадение в элементе вектора, то вектора не совпадают.
 
+Пусть $\hat{v} \in \Cql(\frakV)$. Построим $u: \Cql^p(\frakV) \rightarrow \Cql(\frakV)$ следующим образом:
+\[
+u_{\hat{v}}(\hat{u}^{'1}, \ldots, \hat{u}^{'p}) = u_{\hat{v}}(\bar{\hat{u}}') = 
+\begin{cases}
+s(\hat{v}),\; \text{при} \; \bar{\hat{u}}' = s(\bar{\hat{u}}^0) \; \forall s \in \sigma\\
+\hat{V}^0 = \| v^0 \|, \; \text{при всех} \; s \in \sigma: \ \bar{\hat{u}}' \neq s(\bar{\hat{u}}^0),
+\end{cases}
+\]
+где $\bar{\hat{u}}'$~--- произвольный вектор матриц из $\Cql(\frakV)$, $\hat{V}^0 = \| v^0_{ij} \| = \| v^0 \|$ и $v^0 \in \Cql(\frakV)$, поэтому $\hat{V}^0$ коммутирует со всеми перестановками. В первом условии стоит $s(\cdot)$, потому что равенство должно достигаться не только в точке, но и на всех перестановках.
+
+Условие (*) необходимо для корректного определения функции для первого случая, иначе можно было бы в одной точке определить функцию по-разному.
+
+Проверим, что $u_{\hat{v}}$ коммутирует с $s$\footnote{Сева, зачем нам нужно это? Как связать с категорией?}: $s \circ u_{\hat{v}} = u_{\hat{v}} \circ s$.
+\begin{enumerate}
+\item Если $\bar{\hat{u}}' = s_0(\bar{\hat{u}}^0)$, тогда $s \circ u_{\hat{v}}(s_0(\bar{\hat{u}}^0)) = s \circ s_0(\hat{v})$ и $u_{\hat{v}} \circ s(s_0(\hat{u}^0)) = u_{\hat{v}}(s \circ s_0(\bar{\hat{u}}^0)) = s \circ s_0(\hat{v})$.
+\item Если $\bar{\hat{u}}' \neq s(\bar{\hat{u}}^0) \; \forall s$, то $s(s_0(\hat{v}^0)) = \hat{v}^0 = ss_0(v^0)$.
+\end{enumerate}
 \end{proof}
+Пример.
 \end{document} 
