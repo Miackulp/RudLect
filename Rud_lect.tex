@@ -409,6 +409,17 @@ $\Psi$~--- полная категория, если при всех $\frakU$ и
 Пусть $\Psi$ - полная допустимая категория, $\frakU,\ \frakW$ - множества. Тогда $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$.
 \end{theorem}
 \begin{proof}
+\textbf{I) Необходимость.} Пусть $X$ - база. Возьмём $\hat{V} \in \Cql(\frakW)$ и покажем, что мы можем получить его из элементов $X$ с помощью морфизмов из $\Psi$. \\
+Так как $\Psi$~--- полна $\rightarrow\ \exists p \in \mathds{N}\ \exists u \in Hom_{\Psi}(\Cql^p(\frakU), \Cql(\frakW))\ \exists \hu^1,\ldots,\hu^p \in \Cql^p(\frakU):\ \hat{V} = u(\hu^1,\ldots,\hu^p)$. \\
+И $\forall k\in\{1,\ldots,p\}\ \exists u_k \in \calH(\frakU, \frakU)\ \exists \hu'^1_k,\ldots,\hu'^{n_k}_k \in X^{n_k}:\ \hu^k = u_k(\hu'^1_k,\ldots,\hu'^{n_k}_k)$.\\
+Подставим в выражение $\hat{V} = u(\hu^1,\ldots,\hu^p)$ выражения для $\hu^i$. Таким образом, получим:\\
+$\hat{V} = u(u_1(\hu'^1_1,\ldots,\hu'^{n_1}_1,\ldots,u_p(\hu'^1_p,\ldots,\hu'^{n_p}_p))) = u\circ(u_1\times\ldots\times u_p)(\hu'^1_1,\ldots,\hu'^{n_p}_p)$. \\
+Ввиду допустимости категории $\Psi$, морфизм $u\circ(u_1\times\ldots\times u_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakW)$. \\
+
+\textbf{I) Достаточность.} Пусть $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$. Тут будем действовать практически аналогично пункту с необходимостью. \\
+Возьмем $\hat{U} \in \Cql(\frakU)$. Поскольку $\Psi$~--- полна, то $\hat{U} = u(\hv^1,\ldots,\hv^p)$ и $\hv^k = v_k(\hv'^1_k,\ldots,\hv'^{n_k}_k)$, причём все $\hv'^i_j \in X$.\\
+Таким образом    $\hat{U} = u(v_k(\hv'^1_1,\ldots,\hv'^{n_1}_1),\ldots,v_k(\hv'^1_p,\ldots,\hv'^{n_p}_p)) = v\circ(v_1\times\ldots\times v_p)(\hv'^1_1,\ldots,\hv'^{n_p}_p)$.\\
+Ввиду допустимости категории $\Psi$, морфизм $v\circ(v_1\times\ldots\times v_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakU)$.
 \end{proof}
 
 \chapter{Лекция 8}
