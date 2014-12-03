@@ -11,7 +11,6 @@
 \usepackage{amsmath}
 \usepackage{eufrak}
 \usepackage{amsthm}
-\usepackage{dsfont}
 
 \usepackage{color}
 
@@ -228,7 +227,7 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
 \end{definition}
 
 \begin{definition}[Свободное произведение]
-Пусть имеется $\{A_{\alpha}|\ \alpha\in\mathfrak{A}\}$~--- некоторое множество алгебраических систем. Тогда алгебраическая система $B$, порождённая системами $A_{\alpha}$ так, что гомоморфизм $\varphi_{\alpha}: C \rightarrow A_{\alpha}$, где $C$~--- произвольная алгебраическая система, продолжается до гомоморфизма $f:\ C\rightarrow B$ называется свободным произведением и обозначается
+Пусть имеется $\{A_{\alpha}|\ \alpha\in\mathfrak{A}\}$~--- некоторое множество алгебраических систем. Тогда алгебраическая система $B$, порождённая системами $A_{\alpha}$ так, что гомоморфизм $\varphi_{\alpha}: C \rightarrow A_{\alpha}$, где $C$~--- произвольная алгебраическая система, продолжается до гомоморфизма $f:\ C\rightarrow B$ называется свободным произведением и обозначается 
 \[
 \prod_{\alpha\in\mathfrak{A}}^* A_{\alpha}.
 \]
@@ -298,7 +297,7 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
         \caption{Отношения между объектами $A,B,C$.}
         \label{fig::property_1}
       \end{figure}
-
+      
       Тогда $w = v \circ u$. Таким образом определены суперпозиции для морфизмов. Более того, $(u \circ v) \circ w = u \circ (v \circ w)$ для любых $u, v, w$ для которых такая суперпозиция имеет смысл. А также существует единственный элемент $e_A$, такой, что
       \begin{figure}[htbp]
         \begin{center}
@@ -332,16 +331,16 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
   \item $K_1,\ldots,K_l;\ K_j \subseteq \Upsilon,\ j=\overline{1,l}$. Мы рассматриваем задачу классификации и $K_1,\ldots,K_l$~--- наши классы. Они являются элементами одного множества, но сами могут быть различны.
   \item $\mathfrak{D}_{cl}:\ 2^{\Upsilon}\rightarrow\mathfrak{J}_{cl}$
 \end{itemize}
-Наша задача:
+Наша задача: 
 \[
 A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
-\]
+\] 
 Её решение может быть формализовано в различных вариантах:
 \begin{enumerate}
   \item $\mathfrak{J}_i = \mathfrak{J}_{ob}\times\mathfrak{J}_{cl}$. В такой постановке мы игнорируем тот факт, что классов $l$ и что они однородны.
   \item $\mathfrak{J}_i = \mathfrak{J}_{ob}\times\mathfrak{J}_{cl}^l$. Этот вариант лишен проблемы первого пункта и классы наши различны.
   \item $\mathfrak{J}_i = \mathfrak{J}_{ob}^q\times\mathfrak{J}_{cl}^l$. Ещё более сложный вариант, в котором участвует количество объектов $q$. Таким образом, $S_1,\ldots,S_q$~--- объекты, $(S_1,\ldots,S_q)\in\Upsilon^q$ и окончательно $\mathfrak{D}(S_1),\ldots,\mathfrak{D}(S_q) \in \mathfrak{J}_{ob}^q$.
-  \item $\mathfrak{J}_i = \Cql(\mathfrak{J}),\ \mathfrak{J}_f = \Cql(\tilde{\mathfrak{J}})$, где $\Cql$~--- пространство $q\times l$ матриц над чем-либо. Данный вариант наиболее общий, и его мы будем в дальнейшем рассматривать, считая $\mathfrak{J},\ \tilde{\mathfrak{J}}$ неодноэлементными множествами (иначе множество матриц тривиально).
+  \item $\mathfrak{J}_i = \Cql(\mathfrak{J}),\ \mathfrak{J}_f = \Cql(\tilde{\mathfrak{J}})$, где $\Cql$~--- пространство $q\times l$ матриц над чем-либо. Данный вариант наиболее общий, и его мы будем в дальнейшем рассматривать, считая $\mathfrak{J},\ \tilde{\mathfrak{J}}$ неодноэлементными множествами (иначе множество матриц тривиально). 
 \end{enumerate}
 
 Может показаться, что пункт 4 и 3 дают одинаковую задачу, но это не так. \textcolor{red}{Саня, Я не помню контрпример. Если у тебя есть - впиши}
@@ -364,7 +363,7 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 \section{Переход к категориям}
 Для начала введем несколько упрощающих запись обозначений:
 \begin{itemize}
-  \item $Hom_{\Psi}(\Cql(\frakU),\ \Cql(\frakW)) = H(\frakU,\ \frakW)$
+  \item $Hom_{\Psi}(\Cql(\frakU),\ \Cql(\frakW)) = H(\frakU,\ \frakW)$ 
   \item $\bigcup_{p=0}^{\infty}Hom_{\Psi}(\Cql^p(\frakU),\ \Cql(\frakW)) = \calH(\frakU,\ \frakW)$
 \end{itemize}
 \textcolor{red}{Саня, Я не нашёл нужную букву под фигурное W. Пока что там стоит mathfrak{W}}
@@ -383,7 +382,7 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 Задача называется регулярной, если существует окрестность $O(Z)\subseteq \mathfrak{Z},\ Z\in O(Z)$ такая, $\forall Z_i\in O(Z) \rightarrow Z_i$ - разрешима.
 \end{definition}
 Мы будем пользоваться вторым определением.
-Таким образом каждой задаче $Z$ задан в соответствие набор $((\hI,\ \htI), I_{str}^u)$, $O(Z) = \{Z'| Z' \leftrightarrow ((\hI,\ \htI'), I_{str}^u)\}$.
+Таким образом каждой задаче $Z$ задан в соответствие набор $((\hI,\ \htI), I_{str}^u)$, $O(Z) = \{Z'| Z' \leftrightarrow ((\hI,\ \htI'), I_{str}^u)\}$. 
 И окончательно $I_{str} \leftrightarrow \Psi$.
 \textcolor{red}{Саня, итак, получилось уберкоротко и нихрена не понятно (частично понятно, но последняя строчка вообще хрен знает откуда вылезла) Плюс я картинку не рисовал (квадрат со стрелочками). Надо с обозначениями для них разобраться.}
 
@@ -410,17 +409,6 @@ $\Psi$~--- полная категория, если при всех $\frakU$ и
 Пусть $\Psi$ - полная допустимая категория, $\frakU,\ \frakW$ - множества. Тогда $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$.
 \end{theorem}
 \begin{proof}
-\textbf{I) Необходимость.} Пусть $X$ - база. Возьмём $\hat{V} \in \Cql(\frakW)$ и покажем, что мы можем получить его из элементов $X$ с помощью морфизмов из $\Psi$. \\
-Так как $\Psi$~--- полна $\rightarrow\ \exists p \in \mathds{N}\ \exists u \in Hom_{\Psi}(\Cql^p(\frakU), \Cql(\frakW))\ \exists \hu^1,\ldots,\hu^p \in \Cql^p(\frakU):\ \hat{V} = u(\hu^1,\ldots,\hu^p)$. \\
-И $\forall k\in\{1,\ldots,p\}\ \exists u_k \in \calH(\frakU, \frakU)\ \exists \hu'^1_k,\ldots,\hu'^{n_k}_k \in X^{n_k}:\ \hu^k = u_k(\hu'^1_k,\ldots,\hu'^{n_k}_k)$.\\
-Подставим в выражение $\hat{V} = u(\hu^1,\ldots,\hu^p)$ выражения для $\hu^i$. Таким образом, получим:\\
-$\hat{V} = u(u_1(\hu'^1_1,\ldots,\hu'^{n_1}_1,\ldots,u_p(\hu'^1_p,\ldots,\hu'^{n_p}_p))) = u\circ(u_1\times\ldots\times u_p)(\hu'^1_1,\ldots,\hu'^{n_p}_p)$. \\
-Ввиду допустимости категории $\Psi$, морфизм $u\circ(u_1\times\ldots\times u_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakW)$. \\
-
-\textbf{I) Достаточность.} Пусть $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$. Тут будем действовать практически аналогично пункту с необходимостью. \\
-Возьмем $\hat{U} \in \Cql(\frakU)$. Поскольку $\Psi$~--- полна, то $\hat{U} = u(\hv^1,\ldots,\hv^p)$ и $\hv^k = v_k(\hv'^1_k,\ldots,\hv'^{n_k}_k)$, причём все $\hv'^i_j \in X$.\\
-Таким образом    $\hat{U} = u(v_k(\hv'^1_1,\ldots,\hv'^{n_1}_1),\ldots,v_k(\hv'^1_p,\ldots,\hv'^{n_p}_p)) = v\circ(v_1\times\ldots\times v_p)(\hv'^1_1,\ldots,\hv'^{n_p}_p)$.\\
-Ввиду допустимости категории $\Psi$, морфизм $v\circ(v_1\times\ldots\times v_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakU)$.
 \end{proof}
 
 \chapter{Лекция 8}
@@ -450,16 +438,16 @@ $s(\hat{u}) = s(\| \hat{u}_{ij} \|_{q\times l}) = \|\hat{u}_{s(i, j)} \|_{ql}$
 \begin{definition}
 $s(\hat{u}^1, \ldots, \hat{u}^p) = (s(\hat{u}^1), \ldots, s(\hat{u}^p))$
 \end{definition}
-
+ 
 \begin{definition}
 Пусть $u: \Cql(\frakU) \rightarrow \Cql(\frakW)$ и $s \in \sigma_0$. Тогда $u$ коммутирует с $s$, если $u \circ s = s \circ u$.
 \end{definition}
 
 \begin{definition}
-Категория $\Delta$~--- подкатегория $\Psi_{ql}$, такая что при всех множествах $\frakU$ и $\frakW$, арностях $p_1$ и $p_2$ множество морфизмов
+Категория $\Delta$~--- подкатегория $\Psi_{ql}$, такая что при всех множествах $\frakU$ и $\frakW$, арностях $p_1$ и $p_2$ множество морфизмов 
 \[
 Hom_{\Delta}(\Cql^{p_1}(\frakU), \Cql^{p_2}(\frakW)) = \{ u: \Cql() \rightarrow \Cql(), \; \forall s \in \delta \subseteq \sigma_0: \; u \circ s = s \circ u \}.
-\]
+\] 
 \end{definition}
 
 Проверка требований к категории:
@@ -467,10 +455,10 @@ Hom_{\Delta}(\Cql^{p_1}(\frakU), \Cql^{p_2}(\frakW)) = \{ u: \Cql() \rightarrow 
 \item Тождественное отображение коммутирует с любым отображением.
 \item Коммутация суперпозиций: $(u \circ v) \circ s = u \circ (v \circ s) = u \circ (s \circ v) = s \circ (u \circ v)$.
 \end{enumerate}
-Допустимость категории следует из определения.
+Допустимость категории следует из определения. 
 
 \begin{St}
-$\forall us_1 = s_1u$ {\rm и} $us_2 = s_2u \Rightarrow u(s_1s_2) = (s_1s_2)u$
+$\forall us_1 = s_1u$ {\rm и} $us_2 = s_2u \Rightarrow u(s_1s_2) = (s_1s_2)u$ 
 \end{St}
 
 Если $\delta \subseteq \sigma_0$ и $\sigma_{\delta}$~--- подгруппа, для которой $\delta$ образующая, тогда $\Delta = \Delta_{\delta}$.
@@ -481,14 +469,14 @@ $\forall us_1 = s_1u$ {\rm и} $us_2 = s_2u \Rightarrow u(s_1s_2) = (s_1s_2)u$
 \begin{enumerate}
 \item Сложение действительных матриц.
 \item Поэлементное умножение матриц.
-\item Нормировка матрицы. В отличии от двух предыдущих примеров зависит целиком от всей матрицы, а не от пары элементов.
-\end{enumerate}
+\item Нормировка матрицы. В отличии от двух предыдущих примеров зависит целиком от всей матрицы, а не от пары элементов. 
+\end{enumerate} 
 \chapter{Лекция 9}
 \begin{St}
 Категория $\Sigma_0$ полна.
 \end{St}
 \begin{proof}
-Нужно доказать, что $\forall \frakU, \frakV$: $\calH(\frakU, \frakV)(\Cql(\frakU)) = \Cql(\frakV)$.
+Нужно доказать, что $\forall \frakU, \frakV$: $\calH(\frakU, \frakV)(\Cql(\frakU)) = \Cql(\frakV)$. 
 \end{proof}
 
 Матрица с попарно различными элементами~--- одноэлементная база.
@@ -496,17 +484,17 @@ $\forall us_1 = s_1u$ {\rm и} $us_2 = s_2u \Rightarrow u(s_1s_2) = (s_1s_2)u$
 
 \chapter{Лекция 10}
 \begin{St}
-Пусть $\sigma \subseteq \sigma_0$, $\Sigma$ категория, соответствующая $\sigma$, $\frakU$~--- некоторое множество и $X \subseteq \Cql(\frakU)$. Тогда
+Пусть $\sigma \subseteq \sigma_0$, $\Sigma$ категория, соответствующая $\sigma$, $\frakU$~--- некоторое множество и $X \subseteq \Cql(\frakU)$. Тогда 
 \[
 X\text{~--- база категории} \; \Sigma \Leftrightarrow \forall s \in \sigma \setminus \{e\} \ \exists \hat{u} \in X: s(\hat{u}) \neq \hat{u}.
-\]
+\] 
 \end{St}
 \begin{proof}
 Идея доказательства: если есть нетождественная подстановка переводящая все матрицы в себя, то нельзя получить всё пространство.
 
 \textbf{Необходимость.} Пусть $\exists s \in \sigma \setminus \{e\}: \forall \hat{u} \in X$ выполнено $s(\hat{u}) = \hat{u}$. Рассмотрим такую матрицу $\hat{v} \in \Cql(\frakV)$, что $s(\hat{v}) \neq \hat{v}$. Матрица $\hat{v}$ найдётся, так как $s$ нетождественна, следовательно существуют элементы, которые перемещаются по орбите, длина которой больше 1; составим $\hat{v}$ из различных элементов множества $\frakV$, стоящих на позициях, соответствующих этой орбите.
 
-Пусть $u$~--- морфизм $\Sigma$: $\exists \hat{u}^1, \ldots \hat{u}^p \in X^p$ такие что
+Пусть $u$~--- морфизм $\Sigma$: $\exists \hat{u}^1, \ldots \hat{u}^p \in X^p$ такие что 
 \[
 u(\hat{u}^1, \ldots, \hat{u}^p) = \hat{v}.
 \]
@@ -517,17 +505,17 @@ u(\hat{u}^1, \ldots, \hat{u}^p) = \hat{v}.
 & u \circ s(\hat{u}^1, \ldots, \hat{u}^p) = u(s(\hat{u}^1), \ldots, s(\hat{u}^p)) = u(\hat{u}^1, \ldots, \hat{u}^p) = \hat{v}
 \end{split}
 \end{equation*}
-Получили противоречие с принадлежностью $u$ к морфизмам категории $\Sigma$.
+Получили противоречие с принадлежностью $u$ к морфизмам категории $\Sigma$.      
 
 \textbf{Достаточность.} Пусть $\sigma \setminus \{e\} = (s_1, \ldots, s_p)$~--- подстановки из группы $\sigma$. Пусть вектор матриц $\bar{\hat{u}}^0 = (\hat{u}^1, \ldots, \hat{u}^p)$ такой, что выполнено условие
 \[
-s_k(\hat{u}^k) \neq \hat{u}^k. \eqno(*)
+s_k(\hat{u}^k) \neq \hat{u}^k. \eqno(*) 
 \]
 Отсюда выполнено $\forall k s_k(\bar{\hat{u}}) \neq \bar{\hat{u}}$: если есть несовпадение в элементе вектора, то вектора не совпадают.
 
 Пусть $\hat{v} \in \Cql(\frakV)$. Построим $u: \Cql^p(\frakV) \rightarrow \Cql(\frakV)$ следующим образом:
 \[
-u_{\hat{v}}(\hat{u}^{'1}, \ldots, \hat{u}^{'p}) = u_{\hat{v}}(\bar{\hat{u}}') =
+u_{\hat{v}}(\hat{u}^{'1}, \ldots, \hat{u}^{'p}) = u_{\hat{v}}(\bar{\hat{u}}') = 
 \begin{cases}
 s(\hat{v}),\; \text{при} \; \bar{\hat{u}}' = s(\bar{\hat{u}}^0) \; \forall s \in \sigma\\
 \hat{V}^0 = \| v^0 \|, \; \text{при всех} \; s \in \sigma: \ \bar{\hat{u}}' \neq s(\bar{\hat{u}}^0),
