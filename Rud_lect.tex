@@ -8,16 +8,15 @@
 % \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{listings}
-\usepackage{amsmath}
-\usepackage{eufrak}
-\usepackage{amsthm}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{enumerate}
 
 \usepackage{color}
 
 \usepackage{shortcuts}
 
 \newtheorem{definition}{Определение}[chapter]
-\newtheorem*{theorem}{Теорема}
+\newtheorem{theorem}{Теорема}
 \newtheorem{St}{Утверждение}[chapter]
 
 \lstloadlanguages{C,[ANSI]C++}%,Clean,make,Fortran}%Загружаемые языки
@@ -388,37 +387,46 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 
 \chapter{Лекция 7}
 \section{Понятие базы и формализация требований к морфизмам}
-Нам потребуется понятие базы для последующих исследований. Введем его схожим с линейными пространствами способом:
+Нам потребуется понятие базы для последующих исследований. Введём его схожим с линейными пространствами способом.
 \begin{definition}
-Множество $X\subseteq \Cql(\frakU)$ называется базой в $\Psi$, если $\calH(\frakU,\frakU)(X)\ =\ \{\hfrakU| \hfrakU \in \Cql(\frakU),\ \exists p\ \exists U\ \exists_{X^p} (\hfrakU^1,\ldots,\hfrakU^p): \hfrakU = u(\hfrakU^1,\ldots,\hfrakU^p)\}$. \\
-Данная развернутая запись является обобщением простой идеи:  $\calH(\frakU,\frakU)(X) = \Cql(\frakU)$. \\
-Или ещё проще - из множества $X$ с помощью всех морфизмов из $\Psi $можно получить любую матрицу из $\Cql(\frakU)$.
+Множество $X\subseteq \Cql(\frakU)$ называется базой в $\Psi$, если $\calH(\frakU,\frakU)(X)\ =\ \{\hfrakU| \hfrakU \in \Cql(\frakU),\ \exists p\ \exists U\ \exists_{X^p} (\hfrakU^1,\ldots,\hfrakU^p): \hfrakU = u(\hfrakU^1,\ldots,\hfrakU^p)\}$.
+
+Данная развёрнутая запись является обобщением простой идеи:  $\calH(\frakU,\frakU)(X) = \Cql(\frakU)$.
+
+Или ещё проще~--- из множества $X$ с помощью всех морфизмов из $\Psi $можно получить любую матрицу из $\Cql(\frakU)$.
 \end{definition}
 Однако, этого определения нам недостаточно, так как в нашей задаче мы смотрим морфизмы из одного множества в другое. Поэтому нам нужно множество $X$ в первом множестве, являющееся базой во втором. Это приводит нас к следующему определению.
 \begin{definition}
 Множество $X\subseteq \Cql(\frakU)$ называется базой в $\Cql(\frakU)$ для $\Cql(\frakW)$, если $\calH(\frakU,\frakW)(X) = \Cql(\frakW)$.
 \end{definition}
-Также, для предстоящей нам теоремы нам потребуется понятие полной категории.
+Также для доказательства теоремы нам потребуется понятие полной категории.
 \begin{definition}
-$\Psi$~--- полная категория, если при всех $\frakU$ и  $\frakW$: $\calH(\frakU,\frakW)(\Cql(\frakU)) = \Cql(\frakW)$.\\
-Иначе, если $\Cql(\frakU)$ база в $\Cql(\frakU)$ для $\Cql(\frakW)$.
+$\Psi$~--- полная категория, если при всех $\frakU$ и  $\frakW$: $\calH(\frakU,\frakW)(\Cql(\frakU)) = \Cql(\frakW)$. Иначе, если $\Cql(\frakU)$ база в $\Cql(\frakU)$ для $\Cql(\frakW)$.
 \end{definition}
 
 Всё это приводит нас к следующей теореме.
 \begin{theorem}
-Пусть $\Psi$ - полная допустимая категория, $\frakU,\ \frakW$ - множества. Тогда $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$.
+Пусть $\Psi$~--- полная допустимая категория, $\frakU,\ \frakW$~--- множества. Тогда 
+\[
+(X \; \text{--- база})\Leftrightarrow(X \; \text{--- база в} \; \Cql(\frakU) \; \text{для} \; \Cql(\frakW)).
+\]
 \end{theorem}
 \begin{proof}
-\textbf{I) Необходимость.} Пусть $X$ - база. Возьмём $\hat{V} \in \Cql(\frakW)$ и покажем, что мы можем получить его из элементов $X$ с помощью морфизмов из $\Psi$. \\
-Так как $\Psi$~--- полна $\rightarrow\ \exists p \in \mathds{N}\ \exists u \in Hom_{\Psi}(\Cql^p(\frakU), \Cql(\frakW))\ \exists \hu^1,\ldots,\hu^p \in \Cql^p(\frakU):\ \hat{V} = u(\hu^1,\ldots,\hu^p)$. \\
-И $\forall k\in\{1,\ldots,p\}\ \exists u_k \in \calH(\frakU, \frakU)\ \exists \hu'^1_k,\ldots,\hu'^{n_k}_k \in X^{n_k}:\ \hu^k = u_k(\hu'^1_k,\ldots,\hu'^{n_k}_k)$.\\
-Подставим в выражение $\hat{V} = u(\hu^1,\ldots,\hu^p)$ выражения для $\hu^i$. Таким образом, получим:\\
-$\hat{V} = u(u_1(\hu'^1_1,\ldots,\hu'^{n_1}_1,\ldots,u_p(\hu'^1_p,\ldots,\hu'^{n_p}_p))) = u\circ(u_1\times\ldots\times u_p)(\hu'^1_1,\ldots,\hu'^{n_p}_p)$. \\
-Ввиду допустимости категории $\Psi$, морфизм $u\circ(u_1\times\ldots\times u_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakW)$. \\
+\textbf{Необходимость.} Пусть $X$~--- база. Возьмём $\hat{V} \in \Cql(\frakW)$ и покажем, что мы можем получить его из элементов $X$ с помощью морфизмов из $\Psi$.
 
-\textbf{I) Достаточность.} Пусть $(X$ - база$)\Leftrightarrow(X$ - база в $\Cql(\frakU)$ для $\Cql(\frakW))$. Тут будем действовать практически аналогично пункту с необходимостью. \\
-Возьмем $\hat{U} \in \Cql(\frakU)$. Поскольку $\Psi$~--- полна, то $\hat{U} = u(\hv^1,\ldots,\hv^p)$ и $\hv^k = v_k(\hv'^1_k,\ldots,\hv'^{n_k}_k)$, причём все $\hv'^i_j \in X$.\\
-Таким образом    $\hat{U} = u(v_k(\hv'^1_1,\ldots,\hv'^{n_1}_1),\ldots,v_k(\hv'^1_p,\ldots,\hv'^{n_p}_p)) = v\circ(v_1\times\ldots\times v_p)(\hv'^1_1,\ldots,\hv'^{n_p}_p)$.\\
+Так как $\Psi$~--- полна $\Rightarrow \exists p \in \mathbb{N} \ \exists u \in Hom_{\Psi}(\Cql^p(\frakU), \Cql(\frakW))\ \exists \hu^1,\ldots,\hu^p \in \Cql^p(\frakU):\ \hat{V} = u(\hu^1,\ldots,\hu^p)$.
+И $\forall k\in\{1,\ldots,p\}\ \exists u_k \in \calH(\frakU, \frakU)\ \exists \hu'^1_k,\ldots,\hu'^{n_k}_k \in X^{n_k}:\ \hu^k = u_k(\hu'^1_k,\ldots,\hu'^{n_k}_k)$.
+
+Подставим в выражение $\hat{V} = u(\hu^1,\ldots,\hu^p)$ выражения для $\hu^i$. Таким образом, получим:
+\[
+\hat{V} = u(u_1(\hu'^1_1,\ldots,\hu'^{n_1}_1),\ldots,u_p(\hu'^1_p,\ldots,\hu'^{n_p}_p)) = u\circ(u_1\times\ldots\times u_p)(\hu'^1_1,\ldots,\hu'^{n_p}_p).
+\]
+Ввиду допустимости категории $\Psi$, морфизм $u\circ(u_1\times\ldots\times u_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakW)$.
+
+\textbf{Достаточность.} Пусть $X$~--- база в $\Cql(\frakU)$ для $\Cql(\frakW))$. Доказательство достаточности аналогично доказательству необходимости.
+
+Возьмём $\hat{U} \in \Cql(\frakU)$. Поскольку $\Psi$~--- полна, то $\hat{U} = u(\hv^1,\ldots,\hv^p)$ и $\hv^k = v_k(\hv'^1_k,\ldots,\hv'^{n_k}_k)$, причём все $\hv'^i_j \in X$.\\
+Таким образом, $\hat{U} = u(v_k(\hv'^1_1,\ldots,\hv'^{n_1}_1),\ldots,v_k(\hv'^1_p,\ldots,\hv'^{n_p}_p)) = v\circ(v_1\times\ldots\times v_p)(\hv'^1_1,\ldots,\hv'^{n_p}_p)$.\\
 Ввиду допустимости категории $\Psi$, морфизм $v\circ(v_1\times\ldots\times v_p) \in \Psi$ и мы получили с помощью морфизмов $\Psi$ любой элемент из $\Cql(\frakU)$.
 \end{proof}
 
@@ -543,4 +551,91 @@ s(\hat{v}),\; \text{при} \; \bar{\hat{u}}' = s(\bar{\hat{u}}^0) \; \forall s 
 \end{enumerate}
 \end{proof}
 Пример.
+
+\chapter{Лекция 11}
+\section{Введение в функциональные категории}
+Построения предыдущих лекций про симметрические категории имеют следующие недостатки:
+\begin{enumerate}[1)]
+\item неконструктивность: для проверки принадлежности морфизма категории $\Sigma$ необходимо проверить коммутацию со всеми перестановками соответствующей подгруппы $\sigma$.
+\item морфизм $u: \Cql(\frakU) \rightarrow \Cql(\frakV)$ для элемента $\hat{v}_{ij}$ образа может зависеть как от элемента $\hat{u}_{ij}$ прообраза, так и от всей матрицы образа. То есть у каждого элемента образа есть своя \emph{область зависимости} в прообразе, крайние случаи: один элемент и вся матрица. 
+\end{enumerate} 
+
+\begin{definition}
+Отображение будем называть однородным, если оно не зависит от положения аргумента в матрице из $\Cql(\frakU)$, для всех элементов образа отображение одно и то же.
+\end{definition}
+
+В общем случае любое отображение из пространства $q\times l$ матриц в пространство $q\times l$ матриц можно задать с помощью $ql$ матриц от $ql$ переменных.
+
+\begin{definition}
+\label{def::sign}
+Пусть $S = \{ (i, j) \}$, где $i = 1,\ldots, q$ и $j = 1,\ldots, l$~--- множество мест в матрице. Функциональная сигнатура 
+\[
+\varphi = (S_{(1,1)}, \ldots, S_{(q, l)}, \lambda),
+\]
+где $S_{(i, j)} \subseteq S$, $S_{(i,j)}$~--- линейно упорядоченно и $S_{(i,j)} = (\xi(i, j, 1), \ldots, \xi(i, j, z(i, j)))$; функция~$\lambda: \;S \rightarrow \{1, \ldots, t\}$, где $t \leq ql$, такая что
+\[
+\lambda(i_1, j_1) = \lambda(i_2, j_2) \Rightarrow z(i_1, j_1) = z(i_2, j_2),
+\]
+где $z(i, j) \equiv z(\lambda(i, j))$.
+\end{definition}
+Пояснения к определению~\ref{def::sign}:
+\begin{itemize}
+\item $S_{ij}$~--- упорядоченная область зависимости, то есть упорядоченное множество пар индексов элементов матрицы прообраза, на которых задана функция, дающая $ij$-ый элемент образа
+\item $\xi$~--- индексы из области зависимости, выбирает аргументы, на которыз должна быть задана функция, дающая $ij$-ый элемент образа.
+\item функция $z(k)$ даёт множество аргументов для $k$-ой функции
+\end{itemize}
+\textbf{Пример.}
+\[
+\begin{Vmatrix}
+a & b\\
+c & d
+\end{Vmatrix}
+\mathop{\longrightarrow}\limits^u
+\begin{Vmatrix}
+f(a, b) & g(b, c)\\
+h(c) & f(d, a)
+\end{Vmatrix}
+\]
+Распишем для данного отображения все элементы определения~\ref{def::sign}.
+
+Отображения
+\begin{equation*}
+\begin{split}
+& u:\; \mathfrak{C}_{2 \times 2}(\frakU) \rightarrow \mathfrak{C}_{2 \times 2}(\frakV) \\
+& f: \; \frakU^2 \rightarrow \frakV \\
+& g: \; \frakU^2 \rightarrow \frakV \\
+& h: \; \frakU \rightarrow \frakV.
+\end{split}
+\end{equation*}
+
+Построим соответствующие $S_{(i,j)}$ для образа:
+\begin{equation*}
+\begin{split}
+& S_{(1,1)} = ((1, 1), (1, 2)) \\
+& S_{(1, 2)} = ((1, 2), (2, 1)) \\
+& S_{(2, 1)} = ((2, 1)) \\
+& S_{(2, 2)} = ((2, 2), (1, 1)).
+\end{split}
+\end{equation*}
+ 
+Определим номера функций, действующих на элементах образа:
+\begin{equation*}
+\begin{split}
+& \lambda(1, 1) = \lambda(2, 2) = 1 \\
+& \lambda(1, 2) = 2 \\
+& \lambda(2, 1) = 3.
+\end{split}
+\end{equation*}
+
+\begin{definition}
+Отображение $u: \; \Cql(\frakU) \rightarrow \Cql(\frakV)$ и $\varphi$~--- функциональная сигнатура. Отображение $u$ называется $\varphi$-отображением, если $\exists f_1, \ldots, f_t$, где при $k = 1, \ldots, t$ $f_k: \; \frakU^{z(k)} \rightarrow \frakV$: $u(\hat{U}) = u(\| \hat{u}_{ij} \|_{q \times l}) = \| v_{ij} \|$, где $v_{ij} = f_{\lambda(i,j)}(u_{\xi(i,j,1)}, \ldots, u_{\xi(i,j,z(i, j))})$ 
+\end{definition}
+
+\begin{definition}
+Отображение $u: \; \Cql^p(\frakU) \rightarrow \Cql^r(\frakV)$ и $\varphi$~--- функциональная сигнатура. Отображение $u$ называется $\varphi$-отображением, если $\exists rt$ функций $f^{\alpha}_k$, где при $k = 1, \ldots, t$ и $\alpha = 1, \ldots, r$, где $f^{\alpha}_k: \; \frakU^{pz(k)} \rightarrow \frakV$: $u(\hat{u}^1, \ldots, \hat{u}^p) = (\| v^1_{ij}\|, \ldots, \| v^r_{ij} \|)$, где $v^{\alpha}_{ij} = f^{\alpha}_{\lambda(i,j)}(u^1_{\xi(i,j,1)}, \ldots, u^1_{\xi(i,j,z(i,j))}, u^2_{\xi(i,j,1)}, \ldots, u^p_{\xi(i,j,z(i, j))})$.
+\end{definition}
+
+После задания $\varphi$ остаётся задать отображения, которые ей удовлетворяют и морфизм $u$ будет задан.
+
+Отображение $\lambda$ разбивает $S$ классы ядерной эквивалентности: элементы $S$ находятся в одном классе, если на них задана одинаковая функция. Отсюда ясно, что <<размер>> категории зависит от количества функций и мелкости классов ядерной эквивалентности. Максимальная категория~--- $\Psi_{ql}$~--- все функции разные от всех возможных аргументов; минимальная категория~--- $\Phi_0$~--- одна функция для всех позиций только от одного аргумента стоящего на $ij$-ой позиции в матрице прообраза (сложение матриц, поэлементное произведение). 
 \end{document} 
