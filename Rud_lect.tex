@@ -668,4 +668,93 @@ f(d,c) & h(d)
 Условия 1 и 2 являются необходимыми и достаточными условиями для существования тождественного отображения.
 
 \subsection{Условия для замкнутости относительно суперпозиции}
+
+Условия для замкнутости относительно суперпозиций сложно выразить неформально, поэтому далее будут приведены формальные записи и соответствующие им контрпримеры.
+
+\textbf{Условие 3.}\footnote{Нумерация условий сквозная, так как все они относятся к условиям, при которых $\varphi$-отображения образуют категорию.} 
+\[
+\forall (i_1, j_1), (i_2, j_2): \; (i_1, j_1) \in S_{(i_2, j_2)} \Rightarrow S_{(i_1, j_1)} \subseteq S_{(i_2, j_2)}.
+\]
+
+Контрпример.
+
+Рассмотрим следующую суперпозицию отображений $u$ и $v$:
+\[
+\begin{Vmatrix}
+a & b\\
+c & d
+\end{Vmatrix}
+\mathop{\rightarrow}\limits^u_{f,g,h}
+\begin{Vmatrix}
+f(a,b) & g(b,c)\\
+h(c) & h(d)
+\end{Vmatrix}
+\mathop{\rightarrow}\limits^v_{f',g',h'}
+\begin{Vmatrix}
+f'(f(a,b), g(b,c)) & g'(g(b,c), h(c))\\
+h'(h(c)) & h'(h(d))
+\end{Vmatrix}
+\]
+Вместе с тем $w = u \circ v$:
+\[
+\begin{Vmatrix}
+a & b\\
+c & d
+\end{Vmatrix}
+\mathop{\rightarrow}\limits^w_{f'',g'',h''}
+\begin{Vmatrix}
+f''(a,b) & g''(b,c)\\
+h''(c) & h''(d)
+\end{Vmatrix}
+\]
+
+Предположим функции $f$ и $g$ возвращают второй аргумент, тогда функция $f'$ зависит от $b$ и $c$, в то время как функция $f''$ не зависит от $c$, хотя по условию $f'' = f \circ f'$~--- противоречие.
+
+\textbf{Условие 4.}
+\[
+\forall (i_1, j_1) \neq (i_2, j_2): \; \lambda(i_1, j_1) = \lambda(i_2, j_2) \; \forall k \in \{1, \ldots, z(i_1, j_1) = z(i_2, j_2) \} \lambda(\xi(i_1, j_1, k)) = \lambda(\xi(i_2, j_2, k))
+\]
+
+Контрпример.
+
+Рассмотрим следующую суперпозицию отображений $u$ и $v$:
+\[
+\begin{Vmatrix}
+a & b\\
+c & d
+\end{Vmatrix}
+\mathop{\rightarrow}\limits^u_{f,g,h}
+\begin{Vmatrix}
+f(a,b) & g(b)\\
+f(c,d) & h(d)
+\end{Vmatrix}
+\mathop{\rightarrow}\limits^v_{f',g',h'}
+\begin{Vmatrix}
+f'(f(a,b), g(b)) & g'(g(b))\\
+f'(f(c,d),h(d)) & h'(h(d))
+\end{Vmatrix}
+\]
+Вместе с тем $w = u \circ v$:
+\[
+\begin{Vmatrix}
+a & b\\
+c & d
+\end{Vmatrix}
+\mathop{\rightarrow}\limits^w_{f'',g'',h''}
+\begin{Vmatrix}
+f''(a,b) & g''(b)\\
+f''(c,d) & h''(d)
+\end{Vmatrix}
+\]
+
+Тождество $f'(f(x,y), g(y)) \equiv f'(f(x,y), h(y))$ выполнено только при $h \equiv g$, хотя $h$ и $g$ могут быть любыми~--- противоречие.
+
+\textbf{Условие 5.}
+\begin{equation*}
+\begin{split}
+ \forall (i_1, j_1) \neq (i_2, j_2): \; & \lambda(i_1, j_1) = \lambda(i_2, j_2), \; \forall k \in \{1, \ldots, z(i_1, j_1)\} \; \forall k' = \{ 1, \ldots, z(\xi(i_1, j_1, k)) \}:\\ & \xi(\xi(i_1, j_1, k), k') = \xi(i_1, j_1, k'') \Leftrightarrow 
+\xi(\xi(i_2, j_2, k), k') = \xi(i_2, j_2, k''),
+\end{split}
+\end{equation*}
+причём $k''$ задано однозначно.
 \end{document} 
