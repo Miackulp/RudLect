@@ -769,4 +769,25 @@ f''(c,d) & h''(d)
 \end{split}
 \end{equation*}
 причём $k''$ задано однозначно.
+
+Контрпример.
+
+Пусть $k = 2$ для следующей матрицы и отображений:
+\[
+\begin{Vmatrix}
+x_1 & x_2 & x_3 & x_4 & x_5\\
+y_1 & y_2 & y_3 & y_4 & y_5
+\end{Vmatrix}
+\mathop{\rightarrow}\limits_{f, g, \ldots}
+\begin{Vmatrix}
+f(x_{1-5}) & g(x_2, x_4) & \ldots\\
+f(y_{1-5}) & g(y_2, y_3) & \ldots
+\end{Vmatrix}
+\mathop{\rightarrow}\limits_{f', \ldots}
+\begin{Vmatrix}
+f'(f(x_{1-5}), g(x_2, x_4), \ldots) & \ldots\\
+f'(f(y_{1-5}), g(y_2, y_3), \ldots) & \ldots
+\end{Vmatrix}
+\]
+В то же время $f'(f(x_{1-5}), g(x_2, x_4), \ldots) = f''(x_{1-5})$ и $f'(f(y_{1-5}), g(y_2, y_3), \ldots) = f''(y_{1-5})$.
 \end{document} 
