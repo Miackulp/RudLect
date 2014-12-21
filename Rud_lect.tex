@@ -425,46 +425,63 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 Может показаться, что пункт 4 и 3 дают одинаковую задачу, но это не так. \textcolor{red}{Саня, Я не помню контрпример. Если у тебя есть - впиши}
 
 \section{Задача Z и уточнение структуры структурной информации}
-В новых терминах решение задачи Z формулируется таким образом. Пусть $\hat{I} \in \Cql(\mathfrak{J})$ и $\hat{\tilde{I}} \in \Cql(\tilde{\mathfrak{J}})$. Мы ищем такие отображения $A$, что они являются допустимыми и $A(\hat{I}) = \hat{\tilde{I}}$
+В новых терминах решение задачи Z формулируется таким образом. Пусть $\hat{I} \in \Cql(\mathfrak{J})$ и $\hat{\tilde{I}} \in \Cql(\tilde{\mathfrak{J}})$. Мы ищем такие алгоритмы $A$, что они являются допустимыми и $A(\hat{I}) = \hat{\tilde{I}}$
 
 \begin{definition}
 Алгоритм называется корректным на прецедентах, если $A(\hat{I}) = \hat{\tilde{I}}$
 \end{definition}
 \textcolor{red}{Саня, я тут не особо хорошо записывал. Проверь. Как то странновато вышло.}
 
-До этого мы имели дело с множеством $\frakM^* = \{A| A(\frakI_i) = \frakI_f\}$. Теперь, наши отображения действуют из $\hI$ в $\htI$ и нам уже недостаточно принадлежности $A$ к $\frakM^*$. Пусть $I_{str}^l$ такая, что $\frakM(I_{str}^l) = \{A| A(\hI) = A(\htI)\}$. Таким образом, $I_{str}^l$ - часть структурной информации, отвечающая за то, что отображение действует из $\hI$ в $\htI$. Все же остальные ограничения на отображение $A$ обозначим $I_{str}^u$. Тогда, $\frakM(I_{str}) = \frakM(I_{str^l})\cap\frakM(I_{str}^u)$.
+До этого мы имели дело с множеством $\frakM^* = \{A| A(\frakI_i) = \frakI_f\}$. Теперь наши отображения действуют из $\hI$ в $\htI$, и нам уже недостаточно принадлежности $A$ к $\frakM^*$. Пусть $I_{str}^l$ такая, что $\frakM(I_{str}^l) = \{A| A(\hI) = A(\htI)\}$. Таким образом, $I_{str}^l$~--- часть структурной информации, отвечающая за то, что отображение действует из $\hI$ в $\htI$. Все же остальные ограничения на отображение $A$ обозначим $I_{str}^u$. Тогда $\frakM(I_{str}) = \frakM(I_{str^l})\cap\frakM(I_{str}^u)$.
 
 \section{Разбиение задачи на подзадачи}
-Наша цель в данной секции разбить нашу исходную задачу на несколько подзадач. Идея данного разбиения изложена на диаграмме ниже:
+Наша цель в данной секции разбить нашу исходную задачу на несколько подзадач. Идея данного разбиения изложена в диаграмме ниже:
 \begin{equation*}
 \xymatrix{
-\Cql(\frakI)\ar[r]_A^\frakm\ar[d]_{\frakm_0}^B & \Cql(\tilde{\frakI})\\
-\Cql(R)\ar[r]_{\mathfrak{F}}^F & \Cql(R)\ar[u]_C^{\frakm^1}
+\Cql(\frakI)\ar[r]_A^\frakM\ar[d]_{\frakM^0}^B & \Cql(\tilde{\frakI})\\
+\Cql(R)\ar[r]_{\mathfrak{F}}^F & \Cql(R)\ar[u]_C^{\frakM^1}
 }
 \end{equation*}
-Где $R$ - неодноэлементное множество.\\
-Будем называть $B$~--- распознающими операторами, $F$~--- корректирующими операторами, а $C$~--- решающим правилом. Причём $B$ имеет арность $p$.
+где $R$~--- неодноэлементное множество.
 
-Таким образом, $A = C\cdot F(B_1,\ldots, B_p)$, и, соответственно, $\frakM = \frakM^1\circ f(\frakM^0)$.\\
-Обозначим $\Psi_{ql}$ - такую категорию множеств, что $Ob\Psi_{ql} = \Cql(\frakU)$. Мы хотим рассматривать нашу задачу в некоторой подкатегории этой категории, но наложив при этом определенные ограничения на эту подкатегорию.\\ Основная проблема состоит в том, что непонятно как работать с $B_1,\ldots, B_p$ так, чтобы $C\cdot F(B_1,\ldots, B_p): \Cql(\frakI)\rightarrow \Cql(R)$. Решением этой проблемы мы сейчас и займёмся.
+Будем называть $B$~--- распознающими операторами, $F$~--- корректирующими операторами, а $C$~--- решающим правилом, причём $F$ имеет арность $p$. Таким образом, $A = C\cdot F(B_1,\ldots, B_p)$, и, соответственно, $\frakM = \frakM^1\circ F(\frakM^0)$.
 
-Во первых введем понятие декартова произведения функций и диагонализации:
+Обозначим $\Psi_{ql}$~--- такую категорию множеств, что $Ob\Psi_{ql} = \Cql(\frakU)$. Мы хотим рассматривать нашу задачу в некоторой подкатегории этой категории, но наложив на неё определённые ограничения. 
+
+Основная проблема состоит в том, что непонятно, как работать с $B_1,\ldots, B_p$ так, чтобы $C\cdot F(B_1,\ldots, B_p): \Cql(\frakI)\rightarrow \Cql(R)$. Решением этой проблемы мы сейчас и займёмся.
+
+Во-первых, введём понятие декартова произведения функций и диагонализации:
 \begin{definition}
-    Пусть $f: A\rightarrow B$, $g: C\rightarrow D$. Тогда $f\times g: A\times B\rightarrow C\times D$ и $f\times g (a, c) = (f(a), g(c)),\ a\in A, c\in C$.
+Пусть $f: A\rightarrow B$, $g: C\rightarrow D$. Тогда $f\times g: A\times B\rightarrow C\times D$ и $f\times g (a, c) = (f(a), g(c)),\ a\in A, c\in C$.
 \end{definition}
 \begin{definition}
-    Пусть $f: A^n\rightarrow B$. Тогда $f_{\Delta}: A\rightarrow B$, и $f_{\Delta}(a) = f(a,\ldots, a)$ - диагонализация функции $f$.
+Пусть $f: A^n\rightarrow B$. Тогда $f_{\Delta}: A\rightarrow B$, и $f_{\Delta}(a) = f(a,\ldots, a)$~--- диагонализация функции $f$.
 \end{definition}
 
 Теперь рассмотрим следующую структуру.
-$\forall r=\{1,\ldots, s\}\ B_k^r: \Cql(\frakI)\rightarrow\Cql(R);\ B_k^r\in\frakM^0$, тогда \\
-$B_1^r\times\ldots\times B_{p_r}^r: \Cql^{p_r}(\frakI)\rightarrow \Cql^{p_r}(R)$. Используя введённое выше определение диагонализации:\\
-$(B_1^r\times\ldots\times B_{p_r}^r)_{\Delta}: \Cql(\frakI)\rightarrow \Cql^{p_r}(R)$. Также, введём\\
-$\forall r=\{1,\ldots, s\}\ F_r: \Cql^{p_r}(R) \rightarrow \Cql(R);\ F\in\mathfrak{f}$. теперь определим\\
-$B^{*r} = F_r\circ(B_1^r\times\ldots\times B_{p_r}^r)_{\Delta}: \Cql{\frakI}\rightarrow\Cql(R)$.\\
-И окончательно, получили $A = C\circ(B^{*1}\times\ldots\times B^{*r})_{\Delta}: \Cql(\frakI)\rightarrow \Cql(R)$. Отсюда вытекает определение:
+Если 
+\[
+\forall r=\{1,\ldots, s\}\ B_k^r: \Cql(\frakI)\rightarrow\Cql(R);\ B_k^r\in\frakM^0,
+\] 
+тогда
+\[
+B_1^r\times\ldots\times B_{p_r}^r: \Cql^{p_r}(\frakI)\rightarrow \Cql^{p_r}(R).
+\] 
+Используя введённое выше определение диагонализации,
+\[
+(B_1^r\times\ldots\times B_{p_r}^r)_{\Delta}: \Cql(\frakI)\rightarrow \Cql^{p_r}(R).
+\] 
+Также, введём $\forall r=\{1,\ldots, s\}\ F_r: \Cql^{p_r}(R) \rightarrow \Cql(R);\ F_r \in \mathfrak{F}$. Теперь определим 
+\[
+B^{*r} = F_r\circ(B_1^r\times\ldots\times B_{p_r}^r)_{\Delta}: \Cql(\frakI)\rightarrow\Cql(R).
+\]
+И окончательно получили 
+\[
+A = C\circ(B^{*1}\times\ldots\times B^{*r})_{\Delta}: \Cql(\frakI)\rightarrow \Cql(R).
+\] 
+Отсюда вытекает определение:
 \begin{definition}
-    $\Psi$ - допустимая подкатегория $\Psi_{ql}$, если "работает конструкция выше". (я запарился)
+$\Psi$~--- допустимая подкатегория $\Psi_{ql}$, если она замкнута относительно диагонализации и произведения отображений.
 \end{definition}
 
 
@@ -479,7 +496,7 @@ C\ar@/^/[r]^{g_1}\ar@/_/[r]_{g_2} & A\ar[r]^u & B\ar@/^/[r]^{h_1}\ar@/_/[r]_{h_2
 \end{equation*}
 
 \begin{definition}[Мономорфизм]
-Отображение $u:\ A \rightarrow B$ называется мономорфизмом iff при любых $C$, $g_1$ и $g_2$, таких что $g_1:\ C \rightarrow A$, $g_2:\ C \rightarrow A$ и $g_1 \neq g_2$ выполнено $f \circ g_1 \neq f \circ g_2$ в смысле равенства элементов множества морфизмов.
+Отображение $u:\ A \rightarrow B$ называется мономорфизмом iff при любых $C$, $g_1$ и $g_2$, таких что $g_1:\ C \rightarrow A$, $g_2:\ C \rightarrow A$ и $g_1 \neq g_2$ выполнено $u \circ g_1 \neq u \circ g_2$ в смысле равенства элементов множества морфизмов.
 \end{definition}
 
 Мономорфизм~--- это обобщение инъективного отображения.
