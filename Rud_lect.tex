@@ -83,7 +83,7 @@ A: \mathfrak{I_i} \rightarrow \mathfrak{I_f}.
 Любой алгоритм, реализующий любое допустимое отображение, называется корректным.
 \end{definition}
 
-В такой формулировке необходимым и достаточным условием разрешимости задачи Z является выполнение выражения: 
+В такой формулировке необходимым и достаточным условием разрешимости задачи Z является выполнение выражения:
 \[
 \mathfrak{M}(I_{str}) \neq \emptyset,
 \]
@@ -121,7 +121,7 @@ A: \mathfrak{I_i} \rightarrow \mathfrak{I_f}.
 R: A^n \rightarrow \{ 0, 1 \}
 \]
 \end{definition}
-Отношение $R$ принимает на вход $n$ элементов множества $A$ и проверяет выполняется ли свойство, задаваемое отношением. Например, свойство делимости, равенства и т.д. 
+Отношение $R$ принимает на вход $n$ элементов множества $A$ и проверяет выполняется ли свойство, задаваемое отношением. Например, свойство делимости, равенства и т.д.
 
 \begin{definition}
 Операцией $op$ называется следующее отображение:
@@ -243,9 +243,9 @@ A_{\alpha} = A_{(x, y)} = \{(x', y')| \rho((x,y), (x',y')) \leq 1\}
 Прежде чем вводить свободное произведение, вспомним о понятии гомоморфизма, играющем важную роль в определении свободного произведения.
 
 \begin{definition}
-Пусть 
+Пусть
 $
-\mathcal{R}^1 = 
+\mathcal{R}^1 =
 \begin{pmatrix}
 A & r_1^1 & \ldots & r_k^1\\
   & n_1 & \ldots & n_k
@@ -253,12 +253,12 @@ A & r_1^1 & \ldots & r_k^1\\
 $
 и
 $
-\mathcal{R}^2 = 
+\mathcal{R}^2 =
 \begin{pmatrix}
 B & r_1^2 & \ldots & r_k^2\\
   & n_1 & \ldots & n_k
 \end{pmatrix}
-$, отображение $f: A^m \rightarrow B$~--- гомоморфизм, если это отображение сохраняет все отношения, то есть пусть 
+$, отображение $f: A^m \rightarrow B$~--- гомоморфизм, если это отображение сохраняет все отношения, то есть пусть
 \[
 \forall l \in \{1, \ldots, k \} \; f(a_1^1, \ldots, a_1^m) = b_1, \ldots, f(a^1_l, \ldots, a_l^m) = b_l,
 \]
@@ -297,7 +297,7 @@ B\ar[rd]_{\pi_{\alpha}} & & \ar[ll]_f C\ar[ld]^{\varphi_{\alpha}}\\
 Данное понятие очень похоже по сути на понятие свободного произведения. Вы сами увидите, что конструкции практически идентичны.
 
 \begin{definition}[Свободная сумма]
-Пусть имеется $\{A_{\alpha}|\ \alpha\in\mathfrak{A}\}$~--- некоторое множество алгебраических систем. Тогда алгебраическая система $B$, порождённая системами $A_{\alpha}$, так, что гомоморфизм $g_{\alpha}: A_{\alpha} \rightarrow C$, где $C$~--- произвольная алгебраическая система, продолжается до гомоморфизма $g:\ B\rightarrow C$ называется свободной суммой и обозначается 
+Пусть имеется $\{A_{\alpha}|\ \alpha\in\mathfrak{A}\}$~--- некоторое множество алгебраических систем. Тогда алгебраическая система $B$, порождённая системами $A_{\alpha}$, так, что гомоморфизм $g_{\alpha}: A_{\alpha} \rightarrow C$, где $C$~--- произвольная алгебраическая система, продолжается до гомоморфизма $g:\ B\rightarrow C$ называется свободной суммой и обозначается
 \[
 \mathop{\textstyle{\sum^*}}\limits_{\alpha\in\mathfrak{A}} A_{\alpha}.
 \]
@@ -312,7 +312,7 @@ B\ar[rd]_{\pi_{\alpha}} & & \ar[ll]_f C\ar[ld]^{\varphi_{\alpha}}\\
 \begin{equation*}
 \xymatrix{
 B\ar[rr]^g & & C\\
- & A_{\alpha}\ar[lu]_{\rho_{\alpha}}\ar[ru]^{g_{\alpha}} 
+ & A_{\alpha}\ar[lu]_{\rho_{\alpha}}\ar[ru]^{g_{\alpha}}
 }
 \end{equation*}
 \caption{Иллюстрация к понятию свободной суммы}
@@ -373,7 +373,7 @@ A\ar[rr]^u\ar[rd]_w & & B\ar[ld]^v\\
 \begin{equation*}
 \xymatrix{
 A\ar[rr]^{e_A}\ar[rd]_u & & A\ar[ld]^u\\
- & B & 
+ & B &
 }
 \end{equation*}
 \end{minipage}
@@ -382,7 +382,7 @@ A\ar[rr]^{e_A}\ar[rd]_u & & A\ar[ld]^u\\
 \begin{equation*}
 \xymatrix{
 A\ar[rr]^{e_A} & & A\\
- & B\ar[ru]_v\ar[lu]^v & 
+ & B\ar[ru]_v\ar[lu]^v &
 }
 \end{equation*}
 \end{minipage}
@@ -424,18 +424,49 @@ A:\ \mathfrak{J}_i \rightarrow \mathfrak{J}_f.
 
 Может показаться, что пункт 4 и 3 дают одинаковую задачу, но это не так. \textcolor{red}{Саня, Я не помню контрпример. Если у тебя есть - впиши}
 
+\section{Задача Z и уточнение структуры структурной информации}
 В новых терминах решение задачи Z формулируется таким образом. Пусть $\hat{I} \in \Cql(\mathfrak{J})$ и $\hat{\tilde{I}} \in \Cql(\tilde{\mathfrak{J}})$. Мы ищем такие отображения $A$, что они являются допустимыми и $A(\hat{I}) = \hat{\tilde{I}}$
 
 \begin{definition}
 Алгоритм называется корректным на прецедентах, если $A(\hat{I}) = \hat{\tilde{I}}$
 \end{definition}
 \textcolor{red}{Саня, я тут не особо хорошо записывал. Проверь. Как то странновато вышло.}
+
+До этого мы имели дело с множеством $\frakM^* = \{A| A(\frakI_i) = \frakI_f\}$. Теперь, наши отображения действуют из $\hI$ в $\htI$ и нам уже недостаточно принадлежности $A$ к $\frakM^*$. Пусть $I_{str}^l$ такая, что $\frakM(I_{str}^l) = \{A| A(\hI) = A(\htI)\}$. Таким образом, $I_{str}^l$ - часть структурной информации, отвечающая за то, что отображение действует из $\hI$ в $\htI$. Все же остальные ограничения на отображение $A$ обозначим $I_{str}^u$. Тогда, $\frakM(I_{str}) = \frakM(I_{str^l})\cap\frakM(I_{str}^u)$.
+
+\section{Разбиение задачи на подзадачи}
+Наша цель в данной секции разбить нашу исходную задачу на несколько подзадач. Идея данного разбиения изложена на диаграмме ниже:
 \begin{equation*}
 \xymatrix{
 \Cql(\frakI)\ar[r]_A^\frakm\ar[d]_{\frakm_0}^B & \Cql(\tilde{\frakI})\\
 \Cql(R)\ar[r]_{\mathfrak{F}}^F & \Cql(R)\ar[u]_C^{\frakm^1}
 }
 \end{equation*}
+Где $R$ - неодноэлементное множество.
+Будем называть $B$~--- распознающими операторами, $F$~--- корректирующими операторами, а $C$~--- решающим правилом. Причём $B$ имеет арность $p$.
+
+Таким образом, $A = C\cdot F(B_1,\ldots, B_p)$, и, соответственно, $\frakM = \frakM^1\circ f(\frakM^0)$.
+Обозначим $\Psi_{ql}$ - такую категорию множеств, что $Ob\Psi_{ql} = \Cql(\frakU)$. Мы хотим рассматривать нашу задачу в некоторой подкатегории этой категории, но наложив при этом определенные ограничения на эту подкатегорию. Основная проблема состоит в том, что непонятно как работать с $B_1,\ldots, B_p$ так, чтобы $C\cdot F(B_1,\ldots, B_p): \Cql(\frakI)\rightarrow \Cql(R)$. Решением этой проблемы мы сейчас и займёмся.
+
+Во первых введем понятие декартова произведения функций и диагонализации:
+\begin{definition}
+    Пусть $f: A\rightarrow B$, $g: C\rightarrow D$. Тогда $f\times g: A\times B\rightarrow C\times D$ и $f\times g (a, c) = (f(a), g(c)),\ a\in A, c\in C$.
+\end{definition}
+\begin{definition}
+    Пусть $f: A^n\rightarrow B$. Тогда $f_{\Delta}: A\rightarrow B$, и $f_{\Delta}(a) = f(a,\ldots, a)$ - диагонализация функции $f$.
+\end{definition}
+
+Теперь рассмотрим следующую структуру.
+$\forall r=\{1,\ldots, s\}\ B_k^r: \Cql(\frakI)\rightarrow\Cql(R);\ B_k^r\in\frakM^0$, тогда \\
+$B_1^r\times\ldots\times B_{p_r}^r: \Cql^{p_r}(\frakI)\rightarrow \Cql^{p_r}(R)$. Используя введённое выше определение диагонализации:\\
+$(B_1^r\times\ldots\times B_{p_r}^r)_{\Delta}: \Cql(\frakI)\rightarrow \Cql^{p_r}(R)$. Также, введём\\
+$\forall r=\{1,\ldots, s\}\ F_r: \Cql^{p_r}(R) \rightarrow \Cql(R);\ F\in\mathfrak{f}$. теперь определим\\
+$B^{*r} = F_r\circ(B_1^r\times\ldots\times B_{p_r}^r)_{\Delta}: \Cql{\frakI}\rightarrow\Cql(R)$.\\
+И окончательно, получили $A = C\circ(B^{*1}\times\ldots\times B^{*r})_{\Delta}: \Cql(\frakI)\rightarrow \Cql(R)$. Отсюда вытекает определение:
+\begin{definition}
+    $\Psi$ - допустимая подкатегория $\Psi_{ql}$, если "работает конструкция выше". (я запарился)
+\end{definition}
+
 
 \chapter{Лекция 5}
 \section{Определение инъекции и сюръекции через морфизмы}
@@ -452,7 +483,7 @@ C\ar@/^/[r]^{g_1}\ar@/_/[r]_{g_2} & A\ar[r]^u & B\ar@/^/[r]^{h_1}\ar@/_/[r]_{h_2
 \end{definition}
 
 Мономорфизм~--- это обобщение инъективного отображения.
-\begin{definition}[Эпиморфизм] 
+\begin{definition}[Эпиморфизм]
 Отображение $u: A \rightarrow B$ называется эпиморфизмом iff $\forall D$ и $\forall$ $h_1: B \rightarrow D$ и $h_2: B \rightarrow D$, таких что $h_1 \neq h_2$ выполнено $h_1 \circ u \neq h_2 \circ u$.
 \end{definition}
 
