@@ -598,15 +598,15 @@ $\Psi$~--- полная категория, если при всех $\frakU$ и
 
 Рассмотрим теперь несколько условий, необходимых и достаточных, чтобы $X$ была базой.
 \begin{itemize}
-  \item $\calH(\frakW, \frakV)(X) = \Cql(\frakV)$ iff $X$ - база.
-  \item $\calH(\frakW, \frakV)\calH(\frakV, \frakV)(X) = \Cql(\frakV)$ iff $X$ - база.
-  \item $\calH(\frakW, \frakV)\calH(\frakV, \frakV)H(\frakW, \frakV)(X)=\Cql(\frakW)$. Тут необходимо, чтобы $X$ было базой, но может быть не достаточно. Проблема в $H(\frakW, \frakV)$ - слишком бедное множество морфизмов.
-  \item $H(\frakW, \frakV)(X) = \Cql(\frakV)$ - аналогично, необходимо, чтобы $X$ было базой.
+  \item $\calH(\frakW, \frakV)(X) = \Cql(\frakV)$ iff $X$ - база в $\Cql{\frakW}$.
+  \item $\calH(\frakW, \frakV)\calH(\frakW, \frakW)(X) = \Cql(\frakV)$ iff $X$ - база.
+  \item $\calH(\frakW, \frakV)\calH(\frakW, \frakW)H(\frakV, \frakW)(X)=\Cql(\frakV)$. Это необходимо, чтобы $X$ было базой, но может быть не достаточно. Проблема в $H(\frakW, \frakV)$ - слишком бедное множество морфизмов.
+  \item $H(\frakW, \frakV)(X) = \Cql(\frakV)$ - аналогично, это необходимо, чтобы $X$ было базой.
 \end{itemize}
 Последние два свойства оказались необходимыми, но не достаточными. Оказывается, что справедлива теорема:
 
 \begin{theorem}
-Если $X$ - одноэлементноая база(то есть $|X|=1$), тогда в свойствах 3 и 4 достаточно, чтобы $X$ было базой.
+Если $X$ - одноэлементная база(то есть $|X|=1$), тогда в свойствах 3 и 4 достаточно, чтобы $X$ было базой.
 \end{theorem}
 \begin{proof}
 В обоих свойствах нужно "преодолеть" $H(\frakW, \frakV)$. Рассмотрим любой элемент $V\in\frakV$. Так как $X$ - база, то $V=u(\hu^1,\ldots,\hu^p)$, причём $(\hu^1,\ldots,\hu^p)\in X^p$. Но $X$ - одноэлементная база, а значит все $\hu^i$ равны некоторому $\hu^0$ и окончательно $V = u(\hu^0,\ldots,\hu^0) = u_{\Delta}(\hu^0) \in H(\frakW, \frakV)$. Таким образом для одноэлементной базы достаточно и такого бедного множества морфизмов как $H(\frakW, \frakV)$, чтобы получить всё множество $\frakV$.
@@ -620,18 +620,18 @@ $\Psi$~--- полная категория, если при всех $\frakU$ и
 \Cql(\frakW)\ar[r]_{\mathfrak{F}} & \Cql(\frakW)\ar[u]_{\frakM^1 \subseteq \calH(..)}
 }
 \end{equation*}
-Из данной диаграммы видно, что $\frakM = \frakM^0\circ\mathfrak{F}\circ\frakM^1$.\\
+Из данной диаграммы видно, что $\frakM = \frakM^1\circ\mathfrak{F}\circ\frakM^0$.\\
 
 Для начала приведём общий критерий регулярности задач классификации:
 \begin{theorem}
-Задача $Z$ - регулярна iff $\{\hI\}$ - база $\Psi$.
+Задача $Z$~--- регулярна iff $\{\hI\}$ - база $\Psi$.
 \end{theorem}
 А также, несколько новых определений:
 \begin{definition}
 $\frakM$~--- полно, если в $\frakM$ разрешима любая регулярная задача $Z\leftrightarrow(\Psi,\hI,\htI)$.
 \end{definition}
 \begin{definition}
-$\frakM^0 \subseteq H(\frakV, \frakW)$ называется 1~-~$\Gamma$~-полным, если для любой одноэлементной базы $X$ выполнено $\frakM(X) = \Cql(\frakW)$.
+$\frakM^0 \subseteq H(\frakV, \frakW)$ называется 1~-~$\Gamma$~-полным, если для любой одноэлементной базы $X$ выполнено $\frakM^0(X) = \Cql(\frakW)$.
 \end{definition}
 Оказывается, справедлива следующая теорема:
 \begin{theorem}
@@ -639,31 +639,31 @@ $\frakM$~--- полно iff $\frakM$~--- 1~-~$\Gamma$~-полно.
 \end{theorem}
 Введём ещё несколько понятий, потребующихся нам в будущем.
 \begin{definition}
-$\frakM^0\subseteq H(\frakV, \frakW)$~--- полная модель алгебраических операторов, если $\exists \mathfrak{F}, \frakM^1: \frakM = \frakM^0\circ\mathfrak{F}\circ\frakM^1$~- полно.
+$\frakM^0\subseteq H(\frakV, \frakW)$~--- полная модель алгебраических операторов, если $\exists \mathfrak{F}, \frakM^1: \frakM = \frakM^1\circ\mathfrak{F}\circ\frakM^0$~- полно.
 \end{definition}
 \begin{definition}
 $\frakM^0\subseteq H(\frakV, \frakW)$ называется слабо 1~-~$\Gamma$~-полным, если для любой одноэлементной базы $X\subseteq\Cql(\frakV)$ выполнено $\frakM^0(X)$~--- база в $\Cql(\frakW)$.
 \end{definition}
 Для последних двух определений справедлива следующая теорема:
 \begin{theorem}
-$\frakM^0$~--- полно iff $\frakM^0$~--- слабо 1~-~$\Gamma$~-полно.
+$\frakM^0$~--- полная модель алгебраических операторов iff $\frakM^0$~--- слабо 1~-~$\Gamma$~-полно.
 \end{theorem}
 И окончательно
 \begin{definition}
 Справедливы следующие отношения:
 \[
-\mathfrak{F}\text{-полно} \Leftrightarrow \mathfrak{F}\text{-}\Gamma\text{-полно} \Leftrightarrow X\text{-база} \Rightarrow \mathfrak{F}(X) = \Cql(\frakW).
+(\mathfrak{F}\text{-полно} \equiv \mathfrak{F}\text{-}\Gamma\text{-полно} \equiv X\text{-база}) \Rightarrow \mathfrak{F}(X) = \Cql(\frakW).
 \]
 \end{definition}
 
-После всех этих определений мы подошли к катарсису. Нам требуется определить некоторые ограничения на множества морфизмов суперпозицией которых получается наше множество морфизмов $\frakM$, причём требования должны быть наиболее мягкими чтобы эти множества всё таки остались богатыми. Во первых - $\frakM^1$ должно отображать всё $\Cql(\frakW)$ на всё $\Cql(\frakV)$ иначе мы будем запрещать некоторые ответы, а это недопустимо. Отсюда следует определение:
+После всех этих определений мы подошли к катарсису. Нам требуется определить некоторые ограничения на множества морфизмов, суперпозицией которых получается наше множество морфизмов $\frakM$, причём требования должны быть наиболее мягкими, чтобы эти множества всё-таки остались богатыми. Во-первых~--- $\frakM^1$ должно отображать всё $\Cql(\frakW)$ на всё $\Cql(\frakV)$, иначе мы будем запрещать некоторые ответы, а это недопустимо. Отсюда следует определение:
 \begin{definition}
 $\frakM^1$ корректно, если $\frakM^1(\Cql(\frakW)) = \Cql(\frakV)$.
 \end{definition}
 Для остальных же множеств отображений должно быть выполнено:
 \begin{itemize}
   \item $\mathfrak{F}\text{---}\Gamma\text{-полно}$
-  \item $\frakM^0$~--- полная модель алгебраических операторов
+  \item $\frakM^0$~--- слабо 1~-~$\Gamma$~-полно
 \end{itemize}
 
 
@@ -756,15 +756,15 @@ s_k(\hat{u}^k) \neq \hat{u}^k. \eqno(*)
 \[
 u_{\hat{v}}(\hat{u}^{'1}, \ldots, \hat{u}^{'p}) = u_{\hat{v}}(\bar{\hat{u}}') =
 \begin{cases}
-s(\hat{v}),\; \text{при} \; \bar{\hat{u}}' = s(\bar{\hat{u}}^0) \; \forall s \in \sigma\\
-\hat{V}^0 = \| v^0 \|, \; \text{при всех} \; s \in \sigma: \ \bar{\hat{u}}' \neq s(\bar{\hat{u}}^0),
+s(\hat{v}),\; \text{если}\; \exists s \in \sigma:\; \bar{\hat{u}}' = s(\bar{\hat{u}}^0) \;\\
+\hat{V}^0 = \| v^0 \|, \; \text{если}\; \bar{\hat{u}}' \neq s(\bar{\hat{u}}^0)\; \forall s \in \sigma\;,
 \end{cases}
 \]
-где $\bar{\hat{u}}'$~--- произвольный вектор матриц из $\Cql(\frakV)$, $\hat{V}^0 = \| v^0_{ij} \| = \| v^0 \|$ и $v^0 \in \Cql(\frakV)$, поэтому $\hat{V}^0$ коммутирует со всеми перестановками\footnote{Может быть в первом случае существует!}. В первом условии стоит $s(\cdot)$, потому что равенство должно достигаться не только в точке, но и на всех перестановках.
+где $\bar{\hat{u}}'$~--- произвольный вектор матриц из $\Cql(\frakU)$, $\hat{V}^0 = \| v^0_{ij} \| = \| v^0 \|$ и $v^0 \in \Cql(\frakV)$, поэтому $\hat{V}^0$ коммутирует со всеми перестановками. В первом условии стоит $s(\cdot)$, потому что равенство должно достигаться не только в точке, но и на всех перестановках.
 
 Условие (*) необходимо для корректного определения функции для первого случая, иначе можно было бы в одной точке определить функцию по-разному.
 
-Проверим, что $u_{\hat{v}}$ коммутирует с $s$ () \footnote{Сева, зачем нам нужно это? Как связать с категорией?}: $s \circ u_{\hat{v}} = u_{\hat{v}} \circ s$.
+Проверим, что $u_{\hat{v}}$ коммутирует с $s$: $s \circ u_{\hat{v}} = u_{\hat{v}} \circ s$.
 \begin{enumerate}
 \item Если $\bar{\hat{u}}' = s_0(\bar{\hat{u}}^0)$, тогда $s \circ u_{\hat{v}}(s_0(\bar{\hat{u}}^0)) = s \circ s_0(\hat{v})$ и $u_{\hat{v}} \circ s(s_0(\hat{u}^0)) = u_{\hat{v}}(s \circ s_0(\bar{\hat{u}}^0)) = s \circ s_0(\hat{v})$.
 \item Если $\bar{\hat{u}}' \neq s(\bar{\hat{u}}^0) \; \forall s$, то $s(s_0(\hat{v}^0)) = \hat{v}^0 = ss_0(v^0)$.
